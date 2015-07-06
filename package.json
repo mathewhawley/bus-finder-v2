@@ -1,0 +1,37 @@
+{
+  "name": "bus-finder-v2",
+  "version": "1.0.0",
+  "description": "Rebuild of 'Bus Finder'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathewhawley/bus-finder-v2.git"
+  },
+  "keywords": [
+    "eS6",
+    "react",
+    "systemjs",
+    "jspm",
+    "sass",
+    "gulp"
+  ],
+  "author": "Mathew Hawley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mathewhawley/bus-finder-v2/issues"
+  },
+  "homepage": "https://github.com/mathewhawley/bus-finder-v2#readme",
+  "jspm": {
+    "directories": {
+      "packages": "lib"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.1.13",
+      "babel-runtime": "npm:babel-runtime@^5.1.13",
+      "core-js": "npm:core-js@^0.9.4"
+    }
+  }
+}

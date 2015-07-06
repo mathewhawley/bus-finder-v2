@@ -6,6 +6,8 @@ This is an exercise to better learn several development tools and processes that
 At this stage I'll be aiming to employ:
 
 * SASS
-* Grunt
-* Bower
-* Browserify
+* Gulp
+* JSPM
+* SystemJS
+* React
+* ES6
