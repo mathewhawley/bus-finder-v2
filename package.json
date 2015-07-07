@@ -2,7 +2,7 @@
   "name": "bus-finder-v2",
   "version": "1.0.0",
   "description": "Rebuild of 'Bus Finder'",
-  "main": "dist/index.html",
+  "main": "app/src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,7 +26,11 @@
   "homepage": "https://github.com/mathewhawley/bus-finder-v2#readme",
   "jspm": {
     "directories": {
-      "packages": "lib"
+      "baseURL": "app/src",
+      "packages": "app/src/lib"
+    },
+    "dependencies": {
+      "react": "npm:react@^0.14.0-beta1"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.1.13",
@@ -37,7 +41,6 @@
   "devDependencies": {
     "browser-sync": "^2.7.13",
     "gulp": "^3.9.0",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.1"
+    "require-dir": "^0.3.0"
   }
 }
