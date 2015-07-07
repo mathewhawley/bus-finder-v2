@@ -2,7 +2,7 @@
   "name": "bus-finder-v2",
   "version": "1.0.0",
   "description": "Rebuild of 'Bus Finder'",
-  "main": "index.js",
+  "main": "dist/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -36,9 +36,7 @@
   },
   "devDependencies": {
     "browser-sync": "^2.7.13",
-    "del": "^1.2.0",
     "gulp": "^3.9.0",
-    "gulp-minify-html": "^1.0.3",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.1"
   }
