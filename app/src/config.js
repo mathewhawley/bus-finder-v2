@@ -4,7 +4,8 @@ System.config({
   "babelOptions": {
     "optional": [
       "runtime"
-    ]
+    ],
+    "blacklist": []
   },
   "paths": {
     "*": "*.js",
