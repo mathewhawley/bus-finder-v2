@@ -5,7 +5,7 @@ module.exports = {
     browsersync: {
         development: {
             server: {
-                baseDir: 'app/src'
+                baseDir: 'app/dist'
             },
             port: 9999,
             files: 'app/src'
