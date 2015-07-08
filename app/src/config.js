@@ -20,6 +20,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.6.15",
     "core-js": "npm:core-js@0.9.18",
     "react": "npm:react@0.14.0-beta1",
+    "react-dom": "npm:react-dom@0.14.0-beta1",
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.3.1"
     },
@@ -82,6 +83,9 @@ System.config({
     },
     "npm:path-browserify@0.0.0": {
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:react-dom@0.14.0-beta1": {
+      "react": "npm:react@0.14.0-beta1"
     },
     "npm:react@0.14.0-beta1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
