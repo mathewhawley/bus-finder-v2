@@ -10,6 +10,9 @@ module.exports = {
             port: 9999,
             files: 'app/src'
         }
+    },
+    watch: {
+        sass: 'app/src/styles/scss/**/*.scss'
     }
 
 };

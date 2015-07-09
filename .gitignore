@@ -1,2 +1,6 @@
+# External libraries
 node_modules
 app/src/lib
+
+# Development CSS
+app/src/styles/css
