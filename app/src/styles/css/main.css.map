@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AACe;EAGX,oBAHU;EAIV,uBAAe;UAAf,eAAe,EAFjB","file":"main.css","sourcesContent":["$base: '#app';\n$grey: #cccccc;\n\n#{$base} {\n    background: $grey;\n    transition: 2s;\n}\n"],"sourceRoot":"/source/"}

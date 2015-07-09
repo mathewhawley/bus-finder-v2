@@ -1,0 +1,7 @@
+$base: '#app';
+$grey: #cccccc;
+
+#{$base} {
+    background: $grey;
+    transition: 2s;
+}

@@ -2,4 +2,4 @@
 
 var gulp = require( 'gulp' );
 
-gulp.task( 'watch', [ 'browser-sync' ] );
+gulp.task( 'watch', [ 'browser-sync', 'sass' ] );
