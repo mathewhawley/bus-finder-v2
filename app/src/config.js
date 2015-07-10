@@ -16,7 +16,7 @@ System.config({
 
 System.config({
   "map": {
-    "babel": "npm:babel-core@5.6.15",
+    "babel": "npm:babel-core@5.6.17",
     "babel-runtime": "npm:babel-runtime@5.6.15",
     "core-js": "npm:core-js@0.9.18",
     "react": "npm:react@0.14.0-beta1",

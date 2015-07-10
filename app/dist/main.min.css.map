@@ -1,0 +1,1 @@
+{"version":3,"sources":["main.scss"],"names":[],"mappings":"AAAc,KAGV,WAAA,KACA,mBAAA,GAAA,WAAA","file":"main.min.css","sourcesContent":["$base: '#app';\n\n#{$base} {\n    background: #ffffff;\n    transition: 3s;\n}\n"],"sourceRoot":"/source/"}
