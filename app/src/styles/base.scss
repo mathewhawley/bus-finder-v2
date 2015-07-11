@@ -1,6 +1,8 @@
+@import 'vendor/normalize';
+
 $base: '#app';
 
 #{$base} {
-    background: #ffffff;
-    transition: 3s;
+    color: #cccccc;
+    background: #000000;
 }

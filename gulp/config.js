@@ -11,11 +11,13 @@ module.exports = {
             files: 'app/src'
         }
     },
+
     watch: {
         sass: 'app/src/styles/**/*.scss',
         javascript: 'app/src/scripts/**/*.js',
         html: 'app/src/*.html'
     },
+
     clean: {
         src: 'app/dist/*'
     }
