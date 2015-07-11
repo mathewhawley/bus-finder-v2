@@ -7,7 +7,5 @@ gulp.task( 'build-js', function() {
     exec( 'npm run buildjs', function( err, stdout, stderr ) {
         if ( err )
             throw err;
-        else
-            console.log( 'Build complete.' );
     } );
 } );

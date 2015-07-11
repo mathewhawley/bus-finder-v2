@@ -12,7 +12,7 @@ module.exports = {
         }
     },
     watch: {
-        sass: 'app/src/styles/scss/**/*.scss',
+        sass: 'app/src/styles/**/*.scss',
         javascript: 'app/src/scripts/**/*.js',
         html: 'app/src/*.html'
     },

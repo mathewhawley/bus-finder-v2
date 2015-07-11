@@ -9,10 +9,10 @@ var minifyCss = require( 'gulp-minify-css' );
 var rename = require( 'gulp-rename' );
 
 gulp.task( 'build-sass', function() {
-    gulp.src( 'app/src/styles/scss/**/*.scss' )
+    gulp.src( 'app/src/styles/**/*.scss' )
         .pipe( sourcemaps.init() )
         .pipe( sass() )
-        .pipe( concat( 'main.css' ) )
+        .pipe( concat( 'style.css' ) )
         .pipe( autoprefixer() )
         .pipe( minifyCss() )
         .pipe( rename( { suffix: '.min' } ) )

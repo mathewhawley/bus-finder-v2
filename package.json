@@ -5,7 +5,7 @@
   "main": "app/src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "buildjs": "jspm bundle-sfx scripts/app app/dist/app.js --minify"
+    "buildjs": "jspm bundle-sfx scripts/app app/dist/app.min.js --minify"
   },
   "repository": {
     "type": "git",
