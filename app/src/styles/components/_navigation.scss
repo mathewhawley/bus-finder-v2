@@ -1,9 +1,26 @@
-.navigation {
-    background: $dark-grey;
-    height: 130px;
+$base: '.navigation';
+
+#{$base} {
+    position: relative;
+    background: $brand-dark-grey;
     padding: 16px;
 
     img {
-        width: 40px;
+        height: 40px;
+        margin-top: -5px;
+    }
+
+    &__button {
+        display: inline-block;
+        position: absolute;
+        right: 16px;
+        width: 38px;
+        height: 38px;
+        background-color: $brand-green;
+        background-image: url( 'assets/icon-location.svg' );
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: center;
+        border-radius: .25rem;
     }
 }
