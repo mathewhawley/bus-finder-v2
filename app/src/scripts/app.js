@@ -1,16 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import ListItem from './components/list-item';
+import Navigation from './components/navigation';
 
 var mountNode = document.getElementById( 'app' );
 
 class App extends React.Component {
     render () {
         return (
-            <ul>
-                <ListItem />
-            </ul>
+            <Navigation />
         );
     }
 }
