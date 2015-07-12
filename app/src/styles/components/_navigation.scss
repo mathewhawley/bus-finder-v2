@@ -1,26 +1,30 @@
 $base: '.navigation';
 
 #{$base} {
+    @include x-rem( padding, 16px );
+
     position: relative;
     background: $brand-dark-grey;
-    padding: 16px;
 
     img {
-        height: 40px;
-        margin-top: -5px;
+        @include x-rem( height, 40px );
     }
 
     &__button {
+        @include x-rem( right, 16px );
+        @include x-rem( width, 38px );
+        @include x-rem( height, 38px );
+        @include x-rem( background-size, 20px );
+
         display: inline-block;
         position: absolute;
-        right: 16px;
-        width: 38px;
-        height: 38px;
         background-color: $brand-green;
         background-image: url( 'assets/icon-location.svg' );
         background-repeat: no-repeat;
-        background-size: 20px;
         background-position: center;
-        border-radius: .25rem;
+        border-radius: 20%;
+
+        $button-shadow-tint: shade( $brand-green, 30% );
+        box-shadow: 0 3px 0 0 $button-shadow-tint;
     }
 }
