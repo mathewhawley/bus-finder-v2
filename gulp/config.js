@@ -15,11 +15,12 @@ module.exports = {
     watch: {
         sass: 'app/src/styles/**/*.scss',
         javascript: 'app/src/scripts/**/*.js',
-        html: 'app/src/*.html'
+        html: 'app/src/*.html',
+        assets: 'app/src/assets/**/*'
     },
 
     clean: {
-        src: 'app/dist/*'
+        src: 'app/dist'
     }
 
 };
