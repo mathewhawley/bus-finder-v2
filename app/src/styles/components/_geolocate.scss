@@ -1,0 +1,17 @@
+.geolocate {
+
+    &__button {
+        @include x-rem( right, 16px );
+        @include x-rem( width, 38px );
+        @include x-rem( height, 38px );
+        @include x-rem( background-size, 20px );
+        @include x-rem( border-radius, 8px );
+
+        display: inline-block;
+        position: absolute;
+        background-color: $brand-green;
+        background-image: url( 'assets/icon-location.svg' );
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}

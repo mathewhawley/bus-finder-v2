@@ -1,15 +1,15 @@
 import React from 'react';
-import FindNearMe from './find-near-me';
+import Geolocate from './geolocate';
 
-class Navigation extends React.Component {
+class SiteHeader extends React.Component {
     render () {
         return (
             <div className='site-header'>
                 <img src='assets/logo-small.svg' alt='bus finder logo' />
-                <FindNearMe />
+                <Geolocate />
             </div>
         );
     }
 }
 
-export default Navigation;
+export default SiteHeader;

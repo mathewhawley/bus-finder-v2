@@ -1,6 +1,4 @@
-$base: '.site-header';
-
-#{$base} {
+.site-header {
     @include x-rem( padding, 16px );
 
     position: relative;
@@ -8,23 +6,6 @@ $base: '.site-header';
 
     img {
         @include x-rem( height, 40px );
-    }
-
-    &__button {
-        @include x-rem( right, 16px );
-        @include x-rem( width, 38px );
-        @include x-rem( height, 38px );
-        @include x-rem( background-size, 20px );
-
-        display: inline-block;
-        position: absolute;
-        background-color: $brand-green;
-        background-image: url( 'assets/icon-location.svg' );
-        background-repeat: no-repeat;
-        background-position: center;
-        border-radius: 20%;
-
-        $button-shadow-tint: shade( $brand-green, 30% );
-        box-shadow: 0 3px 0 0 $button-shadow-tint;
+        @include x-rem( margin-top, -5px );
     }
 }

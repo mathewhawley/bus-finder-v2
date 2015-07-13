@@ -1,0 +1,17 @@
+.search {
+
+    &__wrapper {
+        @include x-rem( padding, 7px 16px );
+
+        background-color: rgba( 19, 57, 57, .8 );
+
+        input {
+            @include x-rem( height, 38px );
+            @include x-rem( padding, 0 0 0 10px );
+            @include x-rem( border-radius, 4px );
+
+            width: 100%;
+            border: none;
+        }
+    }
+}
