@@ -1,4 +1,4 @@
-$base: '.navigation';
+$base: '.site-header';
 
 #{$base} {
     @include x-rem( padding, 16px );

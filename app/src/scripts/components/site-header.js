@@ -1,12 +1,12 @@
 import React from 'react';
-import FindButton from './navigation-find-button';
+import FindNearMe from './find-near-me';
 
 class Navigation extends React.Component {
     render () {
         return (
-            <div className='navigation'>
+            <div className='site-header'>
                 <img src='assets/logo-small.svg' alt='bus finder logo' />
-                <FindButton className='navigation__button' />
+                <FindNearMe />
             </div>
         );
     }
