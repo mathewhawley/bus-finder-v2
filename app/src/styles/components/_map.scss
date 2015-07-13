@@ -1,0 +1,9 @@
+#app,
+.site-wrapper {
+    height: 100%;
+}
+
+.map {
+    height: calc( 100% - 122px );
+    background-color: #cccccc;
+}

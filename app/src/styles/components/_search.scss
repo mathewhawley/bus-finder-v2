@@ -2,8 +2,9 @@
 
     &__wrapper {
         @include x-rem( padding, 7px 16px );
+        $brand-grey-tint: tint( $brand-dark-grey, 15% );
 
-        background-color: rgba( 19, 57, 57, .8 );
+        background-color: $brand-grey-tint;
 
         input {
             @include x-rem( height, 38px );
@@ -12,6 +13,10 @@
 
             width: 100%;
             border: none;
+
+            &:focus {
+                outline: none;
+            }
         }
     }
 }
