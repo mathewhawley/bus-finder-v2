@@ -17,3 +17,7 @@
         }
     }
 }
+
+.pac-item {
+    @include x-rem( padding, 5px 10px );
+}
