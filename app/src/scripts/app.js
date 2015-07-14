@@ -7,7 +7,7 @@ import Map from './components/map';
 var mountNode = document.getElementById( 'app' );
 
 class App extends React.Component {
-    render () {
+    render() {
         return (
             <div className='site-wrapper'>
                 <SiteHeader />

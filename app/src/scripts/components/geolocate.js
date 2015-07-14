@@ -1,7 +1,7 @@
 import React from 'react';
 
 class Geolocate extends React.Component {
-    render () {
+    render() {
         return (
             <a href='#' className='geolocate__button'></a>
         );
