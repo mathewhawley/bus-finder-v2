@@ -3,10 +3,10 @@ import React from 'react';
 class Map extends React.Component {
 
     componentDidMount() {
-        this.initMap();
+        this.init();
     }
 
-    initMap() {
+    init() {
         let mapElement = document.querySelector( '.map' );
         let mapOptions = {
             center: new google.maps.LatLng( 51.508800, -0.127477 ),

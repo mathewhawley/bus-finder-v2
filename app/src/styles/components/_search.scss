@@ -1,22 +1,19 @@
 .search {
+    @include x-rem( padding, 7px 16px );
+    $brand-grey-tint: tint( $brand-dark-grey, 15% );
 
-    &__wrapper {
-        @include x-rem( padding, 7px 16px );
-        $brand-grey-tint: tint( $brand-dark-grey, 15% );
+    background-color: $brand-grey-tint;
 
-        background-color: $brand-grey-tint;
+    input {
+        @include x-rem( height, 38px );
+        @include x-rem( padding, 0 0 0 10px );
+        @include x-rem( border-radius, 4px );
 
-        input {
-            @include x-rem( height, 38px );
-            @include x-rem( padding, 0 0 0 10px );
-            @include x-rem( border-radius, 4px );
+        width: 100%;
+        border: none;
 
-            width: 100%;
-            border: none;
-
-            &:focus {
-                outline: none;
-            }
+        &:focus {
+            outline: none;
         }
     }
 }
