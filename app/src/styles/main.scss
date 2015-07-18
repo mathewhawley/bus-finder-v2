@@ -1,14 +1,14 @@
 // Normalize
 @import 'vendor/normalize';
 
+// Resets
+@import 'base/resets';
+
 // Variables
 @import 'base/variables';
 
 // Mixins
 @import 'base/mixins';
-
-// Resets
-@import 'base/resets';
 
 // Components
 @import 'components/site-header';

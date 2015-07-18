@@ -2,4 +2,8 @@
     @include x-rem( height, 50px );
     @include x-rem( margin-top, -5px );
     float: left;
+
+    &:hover {
+        cursor: pointer;
+    }
 }

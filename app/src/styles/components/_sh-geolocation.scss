@@ -10,4 +10,8 @@
     background-image: url( 'assets/icon-location.svg' );
     background-repeat: no-repeat;
     background-position: center;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
