@@ -2,22 +2,29 @@ import React from 'react';
 
 class Geolocation extends React.Component {
 
-    constructor( props ) {
-        super( props );
+    constructor() {
+        super();
         this.handleClick = this.handleClick.bind( this );
-        this.getLocation = this.getLocation.bind( this );
     }
 
     handleClick() {
         if ( 'geolocation' in navigator ) {
-            this.getLocation();
+            navigator.geolocation.getCurrentPosition( this.success, this.fail, { timeout: 10000 } );
         } else {
             alert( 'Sorry, Geolocation seems to be unavailable, please update your browser settings' );
         }
     }
 
-    getLocation() {
-        console.log( 'Working' );
+    success( position ) {
+        var lat = position.coords.latitude,
+            lng = position.coords.longitude,
+            zoom = 16;
+
+        console.log( lat, lng, zoom );
+    }
+
+    fail() {
+        alert( 'Unable to find current location, please try again' );
     }
 
     render() {

@@ -14,8 +14,7 @@ class Map extends React.Component {
     }
 
     componentDidMount() {
-        let mapElement = this.refs.map;
-        let mapOptions = {
+        var mapOptions = {
             center: new google.maps.LatLng( this.state.position.lat, this.state.position.lng ),
             zoom: this.state.zoom,
             scrollwheel: false,
@@ -28,7 +27,7 @@ class Map extends React.Component {
             mapTypeControl: false
         };
 
-        new google.maps.Map( mapElement, mapOptions );
+        new google.maps.Map( this.refs.map, mapOptions );
     }
 
     render() {
