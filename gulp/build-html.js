@@ -1,4 +1,4 @@
-'use-strict';
+'use strict';
 
 var gulp = require( 'gulp' );
 var minifyHtml = require( 'gulp-minify-html' );
