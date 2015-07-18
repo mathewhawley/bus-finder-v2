@@ -2,15 +2,22 @@ import React from 'react';
 
 class Map extends React.Component {
 
-    componentDidMount() {
-        this.init();
+    constructor() {
+        super();
+        this.state = {
+            position: {
+                lat: 51.508800,
+                lng: -0.127477
+            },
+            zoom: 12
+        };
     }
 
-    init() {
-        let mapElement = document.querySelector( '.map' );
+    componentDidMount() {
+        let mapElement = this.refs.map;
         let mapOptions = {
-            center: new google.maps.LatLng( 51.508800, -0.127477 ),
-            zoom: 12,
+            center: new google.maps.LatLng( this.state.position.lat, this.state.position.lng ),
+            zoom: this.state.zoom,
             scrollwheel: false,
             zoomControlOptions: {
                 style: google.maps.ZoomControlStyle.LARGE,
@@ -26,7 +33,7 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div className='map'></div>
+            <div className='map' ref='map'></div>
         );
     }
 }

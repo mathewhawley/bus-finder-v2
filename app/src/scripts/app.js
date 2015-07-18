@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import SiteHeader from './components/site-header';
-import Search from './components/search';
-import Map from './components/map';
+
+import SiteHeader from './components/site-header/sh-main';
+import Map from './components/map/m-main';
 
 var mountNode = document.getElementById( 'app' );
 
@@ -11,7 +11,6 @@ class App extends React.Component {
         return (
             <div className='site-wrapper'>
                 <SiteHeader />
-                <Search />
                 <Map />
             </div>
         );

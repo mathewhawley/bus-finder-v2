@@ -1,12 +1,16 @@
 import React from 'react';
-import Geolocate from './geolocate';
+
+import Geolocation from './sh-geolocation';
+import Logo from './sh-logo';
+import Search from './sh-search';
 
 class SiteHeader extends React.Component {
     render() {
         return (
             <div className='site-header'>
-                <img src='assets/logo-small.svg' alt='bus finder logo' />
-                <Geolocate />
+                <Logo />
+                <Geolocation />
+                <Search />
             </div>
         );
     }

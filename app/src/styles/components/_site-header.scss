@@ -1,11 +1,7 @@
 .site-header {
     @include x-rem( padding, 16px );
+    @include clearfix();
 
-    position: relative;
     background: $brand-dark-grey;
-
-    img {
-        @include x-rem( height, 40px );
-        @include x-rem( margin-top, -5px );
-    }
+    font-size: 0;
 }
