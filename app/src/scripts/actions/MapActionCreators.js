@@ -5,7 +5,7 @@ var ActionTypes = MapConstants.ActionTypes;
 
 var mapActions = {
 
-    repositionMap: ( lat, lng, zoom ) => {
+    repositionMap( lat, lng, zoom ) {
         AppDispatcher.handleViewAction( {
             type: ActionTypes.REPOSITION_MAP,
             lat,
