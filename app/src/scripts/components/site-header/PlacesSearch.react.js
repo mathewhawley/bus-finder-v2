@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Search extends React.Component {
+class PlacesSearch extends React.Component {
 
     componentDidMount() {
         new google.maps.places.Autocomplete( this.refs.searchField );
@@ -17,4 +17,4 @@ class Search extends React.Component {
     }
 }
 
-export default Search;
+export default PlacesSearch;

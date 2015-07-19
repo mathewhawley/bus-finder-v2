@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Geolocation extends React.Component {
+class GeolocationSearch extends React.Component {
 
     constructor() {
         super();
@@ -29,9 +29,9 @@ class Geolocation extends React.Component {
 
     render() {
         return (
-            <div className='sh-geolocation-button' onClick={ this.handleClick }></div>
+            <div className='sh-geolocation-search-button' onClick={ this.handleClick }></div>
         );
     }
 }
 
-export default Geolocation;
+export default GeolocationSearch;

@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import SiteHeader from './components/site-header/sh-main';
-import Map from './components/map/m-main';
+import SiteHeader from './components/site-header/SiteHeader.react';
+import Map from './components/map/Map.react';
 
-var mountNode = document.getElementById( 'app' );
+var mountNode = document.getElementById( 'bus-finder-app' );
 
 class App extends React.Component {
     render() {
         return (
-            <div className='site-wrapper'>
+            <div id='wrapper'>
                 <SiteHeader />
                 <Map />
             </div>
