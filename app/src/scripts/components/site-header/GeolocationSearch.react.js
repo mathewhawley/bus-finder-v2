@@ -1,4 +1,5 @@
 import React from 'react';
+import MapActionCreators from '../../actions/MapActionCreators';
 
 class GeolocationSearch extends React.Component {
 
@@ -11,16 +12,14 @@ class GeolocationSearch extends React.Component {
         if ( 'geolocation' in navigator ) {
             navigator.geolocation.getCurrentPosition( this.success, this.fail, { timeout: 10000 } );
         } else {
-            alert( 'Sorry, Geolocation seems to be unavailable, please update your browser settings' );
+            alert( 'Sorry, Geolocation seems to be unavailable. Please update your browser settings' );
         }
     }
 
     success( position ) {
-        var lat = position.coords.latitude,
-            lng = position.coords.longitude,
+        var { latitude, longitude } = position.coords,
             zoom = 16;
-
-        console.log( lat, lng, zoom );
+        MapActionCreators.repositionMap( latitude, longitude, zoom );
     }
 
     fail() {

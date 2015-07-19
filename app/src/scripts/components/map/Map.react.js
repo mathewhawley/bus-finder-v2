@@ -1,19 +1,18 @@
 import React from 'react';
+import MapStore from '../../stores/MapStore';
 
 class Map extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            position: {
-                lat: 51.508800,
-                lng: -0.127477
-            },
-            zoom: 12
-        };
+        this.state = MapStore.getMapPosition();
     }
 
     componentDidMount() {
+        this.initMap();
+    }
+
+    initMap() {
         var mapOptions = {
             center: new google.maps.LatLng( this.state.position.lat, this.state.position.lng ),
             zoom: this.state.zoom,

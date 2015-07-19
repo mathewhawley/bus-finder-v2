@@ -1,5 +1,4 @@
 import React from 'react';
-
 import GeolocationSearch from './GeolocationSearch.react';
 import PlacesSearch from './PlacesSearch.react';
 
