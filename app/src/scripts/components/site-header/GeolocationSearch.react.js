@@ -1,11 +1,11 @@
 import React from 'react';
-import MapActionCreators from '../../actions/MapActionCreators';
 
 class GeolocationSearch extends React.Component {
 
     constructor() {
         super();
         this.handleClick = this.handleClick.bind( this );
+        this.success = this.success.bind( this );
     }
 
     handleClick() {
@@ -19,7 +19,7 @@ class GeolocationSearch extends React.Component {
     success( position ) {
         var { latitude, longitude } = position.coords,
             zoom = 16;
-        MapActionCreators.repositionMap( latitude, longitude, zoom );
+        this.props.MapActionCreators.getPosition( latitude, longitude, zoom );
     }
 
     fail() {

@@ -5,17 +5,21 @@ import MapConstants from '../constants/MapConstants';
 var ActionTypes = MapConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
-var mapPosition = {
-    position: {
-        lat: 51.508800,
-        lng: -0.127477
-    },
-    zoom: 12
-};
+var mapPosition = {};
+
+function getPosition( lat, lng, zoom ) {
+    return mapPosition = {
+        position: {
+            lat,
+            lng
+        },
+        zoom
+    };
+}
 
 class MapStore extends Events.EventEmitter {
 
-    getMapPosition() {
+    getPosition() {
         return mapPosition;
     }
 
@@ -32,4 +36,28 @@ class MapStore extends Events.EventEmitter {
     }
 }
 
-export default new MapStore();
+var _MapStore = new MapStore();
+
+AppDispatcher.register( ( payload ) => {
+
+    var action = payload.action;
+    console.log( payload );
+
+    switch( action.type ) {
+
+        case ActionTypes.GET_POSITION:
+            getPosition(
+                action.lat,
+                action.lng,
+                action.zoom
+            );
+            console.log( 'map store' );
+            _MapStore.emitChange();
+            break;
+
+        default:
+            // do nothing
+    }
+} );
+
+export default _MapStore;

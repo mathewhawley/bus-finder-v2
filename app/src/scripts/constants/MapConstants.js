@@ -2,7 +2,7 @@ import keyMirror from 'react/lib/keyMirror';
 
 var mapConstants = {
     ActionTypes: keyMirror( {
-        REPOSITION_MAP: null
+        GET_POSITION: null
     } )
 };
 

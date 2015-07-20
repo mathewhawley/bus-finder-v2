@@ -1,6 +1,7 @@
 import React from 'react';
 import GeolocationSearch from './GeolocationSearch.react';
 import PlacesSearch from './PlacesSearch.react';
+import MapActionCreators from '../../actions/MapActionCreators';
 
 class SiteHeader extends React.Component {
 
@@ -16,7 +17,8 @@ class SiteHeader extends React.Component {
                     src='assets/logo-small.svg'
                     alt='bus finder logo'
                     onClick={ this.reloadPage } />
-                <GeolocationSearch />
+                <GeolocationSearch
+                    MapActionCreators={ MapActionCreators } />
                 <PlacesSearch />
             </div>
         );
