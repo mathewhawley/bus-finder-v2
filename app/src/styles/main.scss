@@ -1,14 +1,14 @@
 // Third-party
 @import 'vendor/normalize';
 
+// Mixins
+@import 'base/mixins';
+
 // Resets
 @import 'base/resets';
 
 // Variables
 @import 'base/variables';
-
-// Mixins
-@import 'base/mixins';
 
 // Components
 @import 'components/site-header';

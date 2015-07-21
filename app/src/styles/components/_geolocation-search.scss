@@ -1,5 +1,4 @@
 .sh-geolocation-search-button {
-    @include x-rem( right, 16px );
     @include x-rem( width, 45px );
     @include x-rem( height, 45px );
     @include x-rem( background-size, 20px );
@@ -13,5 +12,6 @@
 
     &:hover {
         cursor: pointer;
+        background-color: $brand-green-shade-10;
     }
 }
