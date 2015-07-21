@@ -17,9 +17,8 @@ class GeolocationSearch extends React.Component {
     }
 
     success( position ) {
-        var { latitude, longitude } = position.coords,
-            zoom = 16;
-        this.props.MapActionCreators.getPosition( latitude, longitude, zoom );
+        var { latitude, longitude } = position.coords;
+        this.props.MapActionCreators.repositionMap( latitude, longitude );
     }
 
     fail() {

@@ -5,14 +5,12 @@ var ActionTypes = MapConstants.ActionTypes;
 
 var mapActions = {
 
-    getPosition( lat, lng, zoom ) {
+    repositionMap( lat, lng ) {
         AppDispatcher.handleViewAction( {
-            type: ActionTypes.GET_POSITION,
+            type: ActionTypes.REPOSITION_MAP,
             lat,
-            lng,
-            zoom
+            lng
         } );
-        console.log( `From the Action Creator: ${ lat }, ${ lng }, ${ zoom }` );
     }
 }
 

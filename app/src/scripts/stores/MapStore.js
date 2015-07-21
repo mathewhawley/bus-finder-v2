@@ -5,22 +5,27 @@ import MapConstants from '../constants/MapConstants';
 var ActionTypes = MapConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
-var mapPosition = {};
+var mapData = {
+    center: new google.maps.LatLng( 51.508800, -0.127477 ),
+    zoom: 12,
+    scrollwheel: false,
+    zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.LARGE,
+        position: google.maps.ControlPosition.RIGHT
+    },
+    streetViewControl: false,
+    panControl: false,
+    mapTypeControl: false
+};
 
-function getPosition( lat, lng, zoom ) {
-    return mapPosition = {
-        position: {
-            lat,
-            lng
-        },
-        zoom
-    };
+function repositionMap( lat, lng ) {
+    mapData.center = new google.maps.LatLng( lat, lng );
 }
 
 class MapStore extends Events.EventEmitter {
 
-    getPosition() {
-        return mapPosition;
+    getMapData() {
+        return mapData;
     }
 
     emitChange() {
@@ -41,17 +46,14 @@ var _MapStore = new MapStore();
 AppDispatcher.register( ( payload ) => {
 
     var action = payload.action;
-    console.log( payload );
 
     switch( action.type ) {
 
-        case ActionTypes.GET_POSITION:
-            getPosition(
+        case ActionTypes.REPOSITION_MAP:
+            repositionMap(
                 action.lat,
-                action.lng,
-                action.zoom
+                action.lng
             );
-            console.log( 'map store' );
             _MapStore.emitChange();
             break;
 

@@ -7,7 +7,6 @@ class AppDispatcher extends Flux.Dispatcher {
             source: 'VIEW_ACTION',
             action: action
         } );
-        console.log( 'dispatcher' );
     }
 }
 
