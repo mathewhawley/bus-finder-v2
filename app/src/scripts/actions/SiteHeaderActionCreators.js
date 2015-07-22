@@ -1,9 +1,9 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import MapConstants from '../constants/MapConstants';
+import AppConstants from '../constants/AppConstants';
 
-var ActionTypes = MapConstants.ActionTypes;
+var ActionTypes = AppConstants.ActionTypes;
 
-var mapActions = {
+export default {
 
     repositionMap( lat, lng ) {
         AppDispatcher.handleViewAction( {
@@ -12,6 +12,6 @@ var mapActions = {
             lng
         } );
     }
-}
+};
 
-export default mapActions;
+

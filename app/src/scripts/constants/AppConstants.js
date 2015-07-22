@@ -1,9 +1,8 @@
 import keyMirror from 'react/lib/keyMirror';
 
-var mapConstants = {
+export default {
+
     ActionTypes: keyMirror( {
         REPOSITION_MAP: null
     } )
 };
-
-export default mapConstants;
