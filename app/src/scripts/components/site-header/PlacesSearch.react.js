@@ -1,5 +1,5 @@
 import React from 'react';
-import SiteHeaderActionCreators from '../../actions/SiteHeaderActionCreators';
+import SearchActionCreators from '../../actions/SearchActionCreators';
 
 class PlacesSearch extends React.Component {
 
@@ -25,7 +25,7 @@ class PlacesSearch extends React.Component {
             lat = place.geometry.location.lat(),
             lng = place.geometry.location.lng();
 
-        SiteHeaderActionCreators.repositionMap( lat, lng );
+        SearchActionCreators.repositionMap( lat, lng );
     }
 
     render() {

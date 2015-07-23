@@ -11,5 +11,13 @@ export default {
             lat,
             lng
         } );
+    },
+
+    addPlaceMarker( lat, lng ) {
+        AppDispatcher.handleViewAction( {
+            type: ActionTypes.ADD_PLACE_MARKER,
+            lat,
+            lng
+        } );
     }
 };

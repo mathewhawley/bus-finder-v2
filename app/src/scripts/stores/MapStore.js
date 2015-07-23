@@ -18,15 +18,11 @@ var mapData = {
     mapTypeControl: false
 };
 
-function repositionMap( lat, lng ) {
+function updateMapCenter( lat, lng ) {
     mapData.center = new google.maps.LatLng( lat, lng );
 }
 
 var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
-
-    getMapData() {
-        return mapData;
-    },
 
     emitChange() {
         this.emit( CHANGE_EVENT );
@@ -34,6 +30,15 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
     addChangeListener( callback ) {
         this.on( CHANGE_EVENT, callback );
+    },
+
+    getMapData() {
+        return mapData;
+    },
+
+    repositionMap( map ) {
+        var center = mapData.center;
+        map.setOptions( { center, zoom: 17 } );
     }
 } );
 
@@ -44,7 +49,7 @@ AppDispatcher.register( ( payload ) => {
     switch( action.type ) {
 
         case ActionTypes.REPOSITION_MAP:
-            repositionMap( action.lat, action.lng );
+            updateMapCenter( action.lat, action.lng );
             MapStore.emitChange();
             break;
 

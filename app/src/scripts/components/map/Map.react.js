@@ -1,5 +1,6 @@
 import React from 'react';
 import MapStore from '../../stores/MapStore';
+import MapOverlayStore from '../../stores/MapOverlayStore';
 
 class Map extends React.Component {
 
@@ -15,11 +16,11 @@ class Map extends React.Component {
     componentDidMount() {
         this.map = new google.maps.Map( this.refs.map, this.mapOptions );
         MapStore.addChangeListener( this.onChangeEvent );
+        MapOverlayStore.addChangeListener( this.onChangeEvent );
     }
 
     onChangeEvent() {
-        var center = MapStore.getMapData().center;
-        this.map.setOptions( { center, zoom: 17 } );
+        MapStore.repositionMap( this.map );
     }
 
     render() {

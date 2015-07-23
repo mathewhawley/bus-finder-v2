@@ -1,5 +1,5 @@
 import React from 'react';
-import SiteHeaderActionCreators from '../../actions/SiteHeaderActionCreators';
+import SearchActionCreators from '../../actions/SearchActionCreators';
 
 class GeolocationSearch extends React.Component {
 
@@ -20,7 +20,7 @@ class GeolocationSearch extends React.Component {
 
     success( position ) {
         var { latitude, longitude } = position.coords;
-        SiteHeaderActionCreators.repositionMap( latitude, longitude );
+        SearchActionCreators.repositionMap( latitude, longitude );
     }
 
     fail() {
