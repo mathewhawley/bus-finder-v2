@@ -1,9 +1,14 @@
 import Events from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
+import OverlayStore from './OverlayStore';
 
 var ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
+
+function updateMapCenter( lat, lng ) {
+    mapData.center = new google.maps.LatLng( lat, lng );
+}
 
 var mapData = {
     center: new google.maps.LatLng( 51.508800, -0.127477 ),
@@ -17,10 +22,6 @@ var mapData = {
     panControl: false,
     mapTypeControl: false
 };
-
-function updateMapCenter( lat, lng ) {
-    mapData.center = new google.maps.LatLng( lat, lng );
-}
 
 var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
@@ -39,6 +40,7 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
     repositionMap( map ) {
         var center = mapData.center;
         map.setOptions( { center, zoom: 17 } );
+        OverlayStore.addPlaceMarker( map, center );
     }
 } );
 
