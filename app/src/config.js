@@ -23,6 +23,7 @@ System.config({
     "flux": "npm:flux@2.0.3",
     "react": "npm:react@0.14.0-beta1",
     "react-dom": "npm:react-dom@0.14.0-beta1",
+    "whatwg-fetch": "npm:whatwg-fetch@0.9.0",
     "github:jspm/nodelibs-buffer@0.1.0": {
       "buffer": "npm:buffer@3.3.1"
     },
