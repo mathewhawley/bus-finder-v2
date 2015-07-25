@@ -7,7 +7,7 @@ class Map extends React.Component {
         super();
 
         this.map;
-        this.mapOptions = MapStore.getMapData();
+        this.mapOptions = MapStore.getMapOptions();
 
         this.onChangeEvent = this.onChangeEvent.bind( this );
     }

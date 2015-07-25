@@ -2,16 +2,16 @@ import Events from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 import OverlayStore from './OverlayStore';
-import MapUtils from '../utils/MapUtils';
+import RequestUtils from '../utils/RequestUtils';
 
 var ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
 function updateMapCenter( lat, lng ) {
-    mapData.center = new google.maps.LatLng( lat, lng );
+    mapOptions.center = new google.maps.LatLng( lat, lng );
 }
 
-var mapData = {
+var mapOptions = {
     center: new google.maps.LatLng( 51.508800, -0.127477 ),
     zoom: 12,
     scrollwheel: false,
@@ -34,17 +34,17 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
         this.on( CHANGE_EVENT, callback );
     },
 
-    getMapData() {
-        return mapData;
+    getMapOptions() {
+        return mapOptions;
     },
 
     repositionMap( map ) {
-        var center = mapData.center;
+        var center = mapOptions.center;
         map.setOptions( {
             center,
             zoom: 16
         } );
-        MapUtils.getNearestStops( map );
+        RequestUtils.addNearestBusMarkers( map );
         OverlayStore.addPlaceMarker( map, center );
     }
 } );
