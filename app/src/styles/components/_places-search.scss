@@ -1,6 +1,6 @@
 .sh-search-field {
     @include x-rem( height, 35px );
-    @include x-rem( padding, 0 0 0 14px );
+    @include x-rem( padding-left, 12px );
     @include x-rem( margin-top, 16px );
     @include x-rem( border-radius, 3px );
     @include x-rem( font-size, 16px );
