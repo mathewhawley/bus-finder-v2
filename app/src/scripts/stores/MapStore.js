@@ -11,6 +11,12 @@ function updateMapCenter( lat, lng ) {
     mapData.center = new google.maps.LatLng( lat, lng );
 }
 
+function getNearestStops( map ) {
+    var bounds = getBounds( map ),
+        url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
+    fetchMarkerData( url, map );
+}
+
 function getBounds( map ) {
     return [
       map.getBounds().getNorthEast().lat(),
@@ -20,9 +26,16 @@ function getBounds( map ) {
     ];
 }
 
-function fetchMarkers( url ) {
+function fetchMarkerData( url, map ) {
+
     jsonp( url, ( ( err, response ) => {
-        console.log( response );
+
+        if ( err ) {
+            return console.warn( 'Unable to retrieve data' );
+        } else {
+            OverlayStore.addBusMarkers( response.markers, map );
+        }
+
     } ) );
 }
 
@@ -55,14 +68,12 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
     repositionMap( map ) {
         var center = mapData.center;
-        map.setOptions( { center, zoom: 16 } );
+        map.setOptions( {
+            center,
+            zoom: 16
+        } );
+        getNearestStops( map );
         OverlayStore.addPlaceMarker( map, center );
-    },
-
-    getNearestStops( map ) {
-        var bounds = getBounds( map ),
-            url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`,
-            markers = fetchMarkers( url );
     }
 } );
 
