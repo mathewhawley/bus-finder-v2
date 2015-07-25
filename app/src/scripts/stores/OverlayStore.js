@@ -13,6 +13,10 @@ function clearMarkers() {
     }
 }
 
+function openModal() {
+    console.log( 'Clicked' );
+}
+
 var OverlayStore = {
 
     addPlaceMarker( map, position ) {
@@ -33,6 +37,7 @@ var OverlayStore = {
                     map,
                     icon: busStopIcon
                 } );
+            google.maps.event.addListener( busMarker, 'click', openModal);
             markerArray.push( busMarker );
         } );
     }
