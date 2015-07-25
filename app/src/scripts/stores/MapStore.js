@@ -1,4 +1,5 @@
 import Events from 'events';
+import jsonp from 'jsonp';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 import OverlayStore from './OverlayStore';
@@ -17,6 +18,12 @@ function getBounds( map ) {
       map.getBounds().getSouthWest().lat(),
       map.getBounds().getSouthWest().lng(),
     ];
+}
+
+function fetchMarkers( url ) {
+    jsonp( url, ( ( err, response ) => {
+        console.log( response );
+    } ) );
 }
 
 var mapData = {
@@ -54,7 +61,8 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
     getNearestStops( map ) {
         var bounds = getBounds( map ),
-            url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
+            url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`,
+            markers = fetchMarkers( url );
     }
 } );
 
