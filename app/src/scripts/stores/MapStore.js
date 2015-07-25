@@ -10,6 +10,15 @@ function updateMapCenter( lat, lng ) {
     mapData.center = new google.maps.LatLng( lat, lng );
 }
 
+function getBounds( map ) {
+    return [
+      map.getBounds().getNorthEast().lat(),
+      map.getBounds().getNorthEast().lng(),
+      map.getBounds().getSouthWest().lat(),
+      map.getBounds().getSouthWest().lng(),
+    ];
+}
+
 var mapData = {
     center: new google.maps.LatLng( 51.508800, -0.127477 ),
     zoom: 12,
@@ -39,8 +48,13 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
     repositionMap( map ) {
         var center = mapData.center;
-        map.setOptions( { center, zoom: 17 } );
+        map.setOptions( { center, zoom: 16 } );
         OverlayStore.addPlaceMarker( map, center );
+    },
+
+    getNearestStops( map ) {
+        var bounds = getBounds( map ),
+            url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
     }
 } );
 

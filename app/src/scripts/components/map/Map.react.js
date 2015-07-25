@@ -19,6 +19,7 @@ class Map extends React.Component {
 
     onChangeEvent() {
         MapStore.repositionMap( this.map );
+        MapStore.getNearestStops( this.map );
     }
 
     render() {
