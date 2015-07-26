@@ -3,10 +3,10 @@ import OverlayStore from '../stores/OverlayStore';
 
 export default {
 
-    addNearestBusMarkers( map ) {
+    getNearestStops( map ) {
         var bounds = this.getBounds( map ),
             url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
-        this.fetchNearestStops( url, map );
+        this.fetchNearestStopsData( url, map );
     },
 
     getBounds( map ) {
@@ -18,7 +18,7 @@ export default {
         ];
     },
 
-    fetchNearestStops( url, map ) {
+    fetchNearestStopsData( url, map ) {
 
         jsonp( url, ( ( err, response ) => {
 

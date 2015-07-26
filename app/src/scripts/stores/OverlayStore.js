@@ -1,6 +1,14 @@
+import Events from 'events';
+import AppDispatcher from '../dispatcher/AppDispatcher';
+import AppConstants from '../constants/AppConstants';
 import RequestUtils from '../utils/RequestUtils';
+import SearchActionCreators from '../actions/SearchActionCreators';
+
+var ActionTypes = AppConstants.ActionTypes;
+const CHANGE_EVENT = 'change';
 
 var markerArray = [],
+    busStopData = {},
     placeIcon = '../../assets/marker-place.svg',
     busStopIcon = '../../assets/marker-bus-stop.svg';
 
@@ -21,7 +29,15 @@ function initModal( marker ) {
     RequestUtils.getStopInfo( marker.id );
 }
 
-var OverlayStore = {
+var OverlayStore = Object.assign( {}, Events.EventEmitter.prototype, {
+
+    emitChange() {
+        this.emit( CHANGE_EVENT );
+    },
+
+    addChangeListener( callback ) {
+        this.on( CHANGE_EVENT, callback );
+    },
 
     addPlaceMarker( map, position ) {
         deleteMarkers();
@@ -43,11 +59,27 @@ var OverlayStore = {
                 } );
 
             google.maps.event.addListener( busMarker, 'click', () => {
-                initModal( marker );
+                SearchActionCreators.getStopInfo( marker );
             } );
             markerArray.push( busMarker );
         } );
     }
-};
+} );
+
+AppDispatcher.register( payload => {
+
+    var action = payload.action;
+
+    switch( action.type ) {
+
+        case ActionTypes.CLICK_MARKER:
+            initModal( action.marker );
+            OverlayStore.emitChange();
+            break;
+
+        default:
+            // do nothing
+    }
+} );
 
 export default OverlayStore;

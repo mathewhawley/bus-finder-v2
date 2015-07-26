@@ -44,7 +44,7 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
             center,
             zoom: 16
         } );
-        RequestUtils.addNearestBusMarkers( map );
+        RequestUtils.getNearestStops( map );
         OverlayStore.addPlaceMarker( map, center );
     }
 } );

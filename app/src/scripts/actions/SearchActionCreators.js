@@ -11,5 +11,12 @@ export default {
             lat,
             lng
         } );
+    },
+
+    getStopInfo( marker ) {
+        AppDispatcher.handleViewAction( {
+            type: ActionTypes.CLICK_MARKER,
+            marker
+        } );
     }
 };
