@@ -1,3 +1,5 @@
+import RequestUtils from '../utils/RequestUtils';
+
 var markerArray = [],
     placeIcon = '../../assets/marker-place.svg',
     busStopIcon = '../../assets/marker-bus-stop.svg';
@@ -13,8 +15,10 @@ function clearMarkers() {
     }
 }
 
-function openModal() {
-    console.log( 'Clicked' );
+function initModal( marker ) {
+    var modal = document.querySelector( '.modal' );
+    modal.classList.toggle( 'modal-open' );
+    RequestUtils.getStopInfo( marker.id );
 }
 
 var OverlayStore = {
@@ -30,14 +34,17 @@ var OverlayStore = {
     },
 
     addBusMarkers( markers, map ) {
-        markers.forEach( ( marker ) => {
+        markers.forEach( marker => {
             var position = new google.maps.LatLng( marker.lat, marker.lng ),
                 busMarker = new google.maps.Marker( {
                     position,
                     map,
                     icon: busStopIcon
                 } );
-            google.maps.event.addListener( busMarker, 'click', openModal);
+
+            google.maps.event.addListener( busMarker, 'click', () => {
+                initModal( marker );
+            } );
             markerArray.push( busMarker );
         } );
     }

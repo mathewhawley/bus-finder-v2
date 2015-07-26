@@ -5,10 +5,8 @@ class Map extends React.Component {
 
     constructor() {
         super();
-
         this.map;
         this.mapOptions = MapStore.getMapOptions();
-
         this.onChangeEvent = this.onChangeEvent.bind( this );
     }
 

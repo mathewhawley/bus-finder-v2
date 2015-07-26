@@ -1,4 +1,5 @@
 .modal {
+    visibility: hidden;
     position: absolute;
     top: 0;
     left: 0;
@@ -6,6 +7,10 @@
     height: 100%;
     background: rgba( 0, 0, 0, .6 );
     z-index: 9999;
+
+    &-open {
+        visibility: visible;
+    }
 
     .window {
         position: absolute;

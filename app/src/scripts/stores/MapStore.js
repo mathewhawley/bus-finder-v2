@@ -49,7 +49,7 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
     }
 } );
 
-AppDispatcher.register( ( payload ) => {
+AppDispatcher.register( payload => {
 
     var action = payload.action;
 
