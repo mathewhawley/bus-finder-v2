@@ -1,5 +1,6 @@
 import jsonp from 'jsonp';
 import OverlayStore from '../stores/OverlayStore';
+import ModalStore from '../stores/ModalStore';
 
 export default {
 
@@ -31,18 +32,18 @@ export default {
         } ) );
     },
 
-    getStopInfo( markerId ) {
-        var url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops/${ markerId }`;
-        this.fetchStopData( url );
+    getStopInfo( marker ) {
+        var url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops/${ marker.id }`;
+        this.fetchStopData( url, marker );
     },
 
-    fetchStopData( url ) {
+    fetchStopData( url, marker ) {
         jsonp( url, ( ( err, response ) => {
 
             if ( err ) {
                 return console.warn( 'Unable to retrieve data' );
             } else {
-                console.log( response );
+                ModalStore.updateData( response.arrivals, marker );
             }
 
         } ) );
