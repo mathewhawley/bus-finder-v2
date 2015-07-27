@@ -11,7 +11,6 @@ var data = {};
 function initModal( marker ) {
     var modal = document.querySelector( '.modal' );
     modal.classList.toggle( 'modal-open' );
-    RequestUtils.getStopInfo( marker );
 }
 
 var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
@@ -25,13 +24,11 @@ var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
     },
 
     updateData( arrivals, stop ) {
-        data.arrivals = arrivals;
-        data.stop = stop;
-        console.log( data );
+        data = { arrivals, stop };
     },
 
     getStopData() {
-        console.log( 'Hello' );
+        return data;
     }
 } );
 
@@ -42,8 +39,10 @@ AppDispatcher.register( payload => {
     switch( action.type ) {
 
         case ActionTypes.CLICK_MARKER:
-            initModal( action.marker );
-            ModalStore.emitChange();
+            initModal();
+            RequestUtils.getStopInfo( action.marker, () => {
+                ModalStore.emitChange();
+            } );
             break;
 
         default:

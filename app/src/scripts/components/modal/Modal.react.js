@@ -1,5 +1,6 @@
 import React from 'react';
 import ModalStore from '../../stores/ModalStore';
+import Window from './Window.react';
 
 class Modal extends React.Component {
 
@@ -14,14 +15,14 @@ class Modal extends React.Component {
     }
 
     onChangeEvent() {
-        ModalStore.getStopData();
+        this.setState( ModalStore.getStopData() );
+        console.log( this.state );
     }
 
     render() {
         return (
             <div className='modal'>
-                <div className='window'>
-                </div>
+                <Window />
             </div>
         );
     }
