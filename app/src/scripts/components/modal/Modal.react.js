@@ -4,7 +4,7 @@ import Window from './Window.react';
 class Modal extends React.Component {
     render() {
         return (
-            <div className='modal-backdrop'>
+            <div className='modal'>
                 <Window />
             </div>
         );
