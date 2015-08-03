@@ -4,7 +4,7 @@ class CloseButton extends React.Component {
 
     render() {
         return (
-            <div className="close-button"></div>
+            <div className="modal-close-button"></div>
         );
     }
 }

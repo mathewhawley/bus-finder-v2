@@ -1,5 +1,4 @@
-.modal {
-    visibility: hidden;
+.modal-backdrop {
     position: absolute;
     top: 0;
     left: 0;
@@ -8,11 +7,7 @@
     background: rgba( $black, .6 );
     z-index: 9999;
 
-    &-open {
-        visibility: visible;
-    }
-
-    .window {
+    .modal-body {
         position: absolute;
         width: calc( 100% - 30px );
         height: calc( 100% - 30px );
@@ -21,7 +16,7 @@
         background: $white;
         box-shadow: 0 0 10px 0 rgba( $black, .6 );
 
-        .close-button {
+        .modal-close-button {
             position: absolute;
             width: 60px;
             height: 60px;

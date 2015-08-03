@@ -12,7 +12,7 @@ class App extends React.Component {
             <div className='wrapper'>
                 <SiteHeader />
                 <Map />
-                <Modal />
+                <Modal isOpen={ false } />
             </div>
         );
     }
