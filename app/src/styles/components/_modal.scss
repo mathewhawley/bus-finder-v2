@@ -21,7 +21,7 @@
 
     &-close-button {
         @include x-rem( padding, 20px );
-        @include x-rem( font-size, 25px );
+        @include x-rem( font-size, 30px );
 
         position: absolute;
         right: 0;
@@ -29,6 +29,7 @@
         cursor: pointer;
         line-height: 1ex;
         background: none;
+        font-weight: 200;
 
         &:after {
             content: '\00d7';

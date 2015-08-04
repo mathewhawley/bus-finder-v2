@@ -8,7 +8,7 @@ const CHANGE_EVENT = 'change';
 
 var data = {};
 
-function initModal( marker ) {
+function openModal( marker ) {
     var modal = document.querySelector( '.modal' );
     modal.classList.toggle( 'modal-open' );
 }
@@ -25,6 +25,7 @@ var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
     updateData( arrivals, stop ) {
         data = { arrivals, stop };
+        openModal();
     },
 
     getStopData() {
@@ -39,7 +40,6 @@ AppDispatcher.register( payload => {
     switch( action.type ) {
 
         case ActionTypes.CLICK_MARKER:
-            initModal();
             RequestUtils.getStopInfo( action.marker, () => {
                 ModalStore.emitChange();
             } );

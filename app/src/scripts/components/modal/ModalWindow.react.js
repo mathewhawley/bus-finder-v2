@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Window extends React.Component {
+class ModalWindow extends React.Component {
     render() {
         return (
             <div className='modal-body'>
@@ -12,4 +12,4 @@ class Window extends React.Component {
     }
 }
 
-export default Window;
+export default ModalWindow;
