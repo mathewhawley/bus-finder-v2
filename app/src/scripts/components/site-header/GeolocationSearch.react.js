@@ -29,7 +29,7 @@ class GeolocationSearch extends React.Component {
 
     render() {
         return (
-            <div className='sh-geolocation-search-button' onClick={ this.handleClick }></div>
+            <div className='site-header__geolocation-search-button' onClick={ this.handleClick }></div>
         );
     }
 }

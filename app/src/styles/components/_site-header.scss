@@ -5,7 +5,7 @@
     background: $brand-dark-grey;
     font-size: 0;
 
-    .sh-logo {
+    &__logo {
         @include x-rem( height, 50px );
         @include x-rem( margin-top, -5px );
 
@@ -15,4 +15,42 @@
             cursor: pointer;
         }
     }
+
+    &__geolocation-search-button {
+        @include x-rem( width, 45px );
+        @include x-rem( height, 45px );
+        @include x-rem( background-size, 20px );
+        @include x-rem( border-radius, 8px );
+
+        float: right;
+        background-color: $brand-green;
+        background-image: url( 'assets/icon-location.svg' );
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &:hover {
+            cursor: pointer;
+            background-color: $brand-green-shade-10;
+        }
+    }
+
+    &__search-field {
+        @include x-rem( height, 30px );
+        @include x-rem( padding-left, 12px );
+        @include x-rem( margin-top, 16px );
+        @include x-rem( border-radius, 3px );
+        @include x-rem( font-size, 14px );
+
+        width: 100%;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+// autocomplete dropdown elements
+.pac-item {
+    @include x-rem( padding, 5px 10px );
 }

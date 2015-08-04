@@ -12,7 +12,7 @@ class SiteHeader extends React.Component {
         return (
             <div className='site-header'>
                 <img
-                    className='sh-logo'
+                    className='site-header__logo'
                     src='assets/logo-small.svg'
                     alt='bus finder logo'
                     onClick={ this.reloadPage } />

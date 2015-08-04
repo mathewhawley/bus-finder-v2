@@ -31,7 +31,7 @@ class PlacesSearch extends React.Component {
     render() {
         return (
             <input
-                className='sh-search-field'
+                className='site-header__search-field'
                 input='text'
                 placeholder='Search for stops near...'
                 ref='searchField' />
