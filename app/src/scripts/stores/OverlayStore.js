@@ -18,17 +18,22 @@ function clearMarkers() {
 var OverlayStore = {
 
     addPlaceMarker( map, position ) {
+
         deleteMarkers();
+
         var placeMarker = new google.maps.Marker( {
             position,
             map,
             icon: placeIcon
         } );
+
         markerArray.push( placeMarker );
     },
 
     addBusMarkers( markers, map ) {
+
         markers.forEach( marker => {
+
             var position = new google.maps.LatLng( marker.lat, marker.lng ),
                 busMarker = new google.maps.Marker( {
                     position,
@@ -39,6 +44,7 @@ var OverlayStore = {
             google.maps.event.addListener( busMarker, 'click', () => {
                 SearchActionCreators.getStopInfo( marker );
             } );
+
             markerArray.push( busMarker );
         } );
     }

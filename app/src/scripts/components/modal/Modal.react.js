@@ -4,12 +4,7 @@ import Window from './Window.react';
 
 class Modal extends React.Component {
 
-    constructor() {
-        super();
-        this.closeModal = this.closeModal.bind( this );
-    }
-
-    closeModal() {
+    handleClick() {
         var modal = ReactDOM.findDOMNode( this.refs.modal );
         modal.classList.toggle( 'modal-open' );
     }
@@ -17,7 +12,7 @@ class Modal extends React.Component {
     render() {
         return (
             <div className='modal' ref='modal'>
-                <Window onClick={ this.closeModal } />
+                <Window closeModal={ this.handleClick.bind( this ) } />
             </div>
         );
     }

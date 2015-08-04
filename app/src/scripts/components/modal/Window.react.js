@@ -5,7 +5,7 @@ class Window extends React.Component {
     render() {
         return (
             <div className='modal-body'>
-                <CloseButton onClick={ this.props.onClick } />
+                <CloseButton closeModal={ this.props.closeModal } />
             </div>
         );
     }
