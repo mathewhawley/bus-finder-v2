@@ -11,7 +11,7 @@ function getBounds( map ) {
     ];
 }
 
-function fetchNearestStopsData( url, map ) {
+function fetchNearestStops( url, map ) {
 
     jsonp( url, ( ( err, response ) => {
 
@@ -24,7 +24,7 @@ function fetchNearestStopsData( url, map ) {
     } ) );
 }
 
-function fetchStopData( url, marker, callback ) {
+function fetchStopArrivals( url, marker, callback ) {
     jsonp( url, ( ( err, response ) => {
 
         if ( err ) {
@@ -42,13 +42,13 @@ var RequestUtils = {
 
     getNearestStops( map ) {
         var bounds = getBounds( map ),
-            url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
-        fetchNearestStopsData( url, map );
+            url = `http://digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
+        fetchNearestStops( url, map );
     },
 
     getStopInfo( marker, callback ) {
-        var url = `http:\/\/digitaslbi-id-test.herokuapp.com/bus-stops/${ marker.id }`;
-        fetchStopData( url, marker, callback );
+        var url = `http://digitaslbi-id-test.herokuapp.com/bus-stops/${ marker.id }`;
+        fetchStopArrivals( url, marker, callback );
     }
 };
 

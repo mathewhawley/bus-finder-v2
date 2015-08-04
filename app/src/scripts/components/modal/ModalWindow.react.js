@@ -1,11 +1,12 @@
 import React from 'react';
-import CloseButton from './CloseButton.react';
 
 class Window extends React.Component {
     render() {
         return (
             <div className='modal-body'>
-                <CloseButton closeModal={ this.props.closeModal } />
+                <button
+                    onClick={ this.props.closeModal }
+                    className='modal-close-button'></button>
             </div>
         );
     }
