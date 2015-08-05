@@ -6,20 +6,20 @@
     width: 100%;
     height: 100%;
 
-    &-open {
+    &--open {
         visibility: visible;
     }
 
-    &-backdrop {
+    &__backdrop {
         background: rgba( $black, .6 );
     }
 
-    &-body {
+    &__panel {
         height: 100%;
         background-color: $white;
     }
 
-    &-close-button {
+    &__close-button {
         @include x-rem( padding, 20px );
         @include x-rem( font-size, 30px );
 

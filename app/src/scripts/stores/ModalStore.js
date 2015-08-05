@@ -10,7 +10,7 @@ var data = {};
 
 function openModal( marker ) {
     var modal = document.querySelector( '.modal' );
-    modal.classList.toggle( 'modal-open' );
+    modal.classList.toggle( 'modal--open' );
 }
 
 var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
