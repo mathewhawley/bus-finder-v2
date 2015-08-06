@@ -1,11 +1,10 @@
 import React from 'react';
 import SearchActionCreators from '../../actions/SearchActionCreators';
 
-class GeolocationSearch extends React.Component {
+class SearchButton extends React.Component {
 
     constructor() {
         super();
-
         this.handleClick = this.handleClick.bind( this );
         this.success = this.success.bind( this );
     }
@@ -29,9 +28,12 @@ class GeolocationSearch extends React.Component {
 
     render() {
         return (
-            <div className='site-header__geolocation-search-button' onClick={ this.handleClick }></div>
+            <div
+                className={ this.props.className + '__search-button' }
+                onClick={ this.handleClick }>
+            </div>
         );
     }
 }
 
-export default GeolocationSearch;
+export default SearchButton;

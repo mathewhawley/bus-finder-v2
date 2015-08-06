@@ -7,10 +7,18 @@ import Modal from './components/modal/Modal.react';
 var mountNode = document.getElementById( 'bus-finder-app' );
 
 class App extends React.Component {
+
+    reloadApp() {
+        window.location.reload();
+    }
+
     render() {
         return (
             <div className='wrapper'>
-                <SiteHeader />
+                <SiteHeader
+                    className={ 'site-header' }
+                    logo={ 'assets/logo-small.svg' }
+                    reloadApp={ this.reloadApp.bind( this ) } />
                 <Map
                     className={ 'map' }
                     center={ { lat: 51.508800, lng: -0.127477 } }

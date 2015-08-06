@@ -1,23 +1,25 @@
 import React from 'react';
-import GeolocationSearch from './GeolocationSearch.react';
-import PlacesSearch from './PlacesSearch.react';
+import SearchButton from './SearchButton.react';
+import SearchField from './SearchField.react';
 
 class SiteHeader extends React.Component {
 
-    reloadPage() {
-        window.location.reload();
-    }
-
     render() {
         return (
-            <div className='site-header'>
+            <div className={ this.props.className }>
                 <img
-                    className='site-header__logo'
-                    src='assets/logo-small.svg'
+                    className={ this.props.className + '__logo' }
+                    src={ this.props.logo }
                     alt='bus finder logo'
-                    onClick={ this.reloadPage } />
-                <GeolocationSearch />
-                <PlacesSearch />
+                    onClick={ this.props.reloadApp } />
+
+                <SearchButton
+                    className={ this.props.className } />
+
+                <SearchField
+                    className={ this.props.className }
+                    placeholder={ 'Search for stops near\u2026' }
+                    inputType={ 'text' } />
             </div>
         );
     }

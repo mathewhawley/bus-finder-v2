@@ -16,7 +16,7 @@
         }
     }
 
-    &__geolocation-search-button {
+    &__search-button {
         @include x-rem( width, 45px );
         @include x-rem( height, 45px );
         @include x-rem( background-size, 20px );
