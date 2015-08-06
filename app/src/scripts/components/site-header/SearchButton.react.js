@@ -6,7 +6,6 @@ class SearchButton extends React.Component {
     constructor() {
         super();
         this.handleClick = this.handleClick.bind( this );
-        this.success = this.success.bind( this );
     }
 
     handleClick() {
