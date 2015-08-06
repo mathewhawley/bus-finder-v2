@@ -1,25 +1,28 @@
 import React from 'react';
 import SearchActionCreators from '../../actions/SearchActionCreators';
 
-class PlacesSearch extends React.Component {
+class SearchField extends React.Component {
 
     constructor() {
         super();
-        this.searchField;
-        this.handleSubmit = this.handleSubmit.bind( this );
+        this.clearInput = this.clearInput.bind( this );
     }
 
     componentDidMount() {
-        this.searchField = new google.maps.places.Autocomplete( this.refs.searchField );
-        google.maps.event.addListener( this.searchField, 'place_changed', this.handleSubmit );
+        var searchField = new google.maps.places.Autocomplete( this.refs.searchField );
+        google.maps.event.addListener( searchField, 'place_changed', () => this.handleSubmit( searchField ) );
     }
 
-    handleSubmit() {
-        var place = this.searchField.getPlace(),
+    handleSubmit( searchField ) {
+        var place = searchField.getPlace(),
             lat = place.geometry.location.lat(),
             lng = place.geometry.location.lng();
 
         SearchActionCreators.repositionMap( lat, lng );
+    }
+
+    clearInput() {
+        this.refs.searchField.value = '';
     }
 
     render() {
@@ -28,9 +31,10 @@ class PlacesSearch extends React.Component {
                 className={ this.props.className + '__search-field' }
                 placeholder={ this.props.placeholder }
                 input={ this.props.inputType }
+                onClick={ this.clearInput }
                 ref='searchField' />
         );
     }
 }
 
-export default PlacesSearch;
+export default SearchField;
