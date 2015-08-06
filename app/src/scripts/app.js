@@ -11,7 +11,18 @@ class App extends React.Component {
         return (
             <div className='wrapper'>
                 <SiteHeader />
-                <Map />
+                <Map
+                    className={ 'map' }
+                    center={ { lat: 51.508800, lng: -0.127477 } }
+                    zoom={ 12 }
+                    scrollwheel={ false }
+                    zoomControlOptions={ {
+                        style: google.maps.ZoomControlStyle.LARGE,
+                        position: google.maps.ControlPosition.RIGHT
+                    } }
+                    streetViewControl={ false }
+                    panControl={ false }
+                    mapTypeControl={ false } />
                 <Modal />
             </div>
         );

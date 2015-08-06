@@ -1,28 +1,15 @@
 import Events from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
-import OverlayStore from './OverlayStore';
-import RequestUtils from '../utils/RequestUtils';
 
 var ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
 function updateMapCenter( lat, lng ) {
-    mapOptions.center = new google.maps.LatLng( lat, lng );
+    data.center = new google.maps.LatLng( lat, lng );
 }
 
-var mapOptions = {
-    center: new google.maps.LatLng( 51.508800, -0.127477 ),
-    zoom: 12,
-    scrollwheel: false,
-    zoomControlOptions: {
-        style: google.maps.ZoomControlStyle.LARGE,
-        position: google.maps.ControlPosition.RIGHT
-    },
-    streetViewControl: false,
-    panControl: false,
-    mapTypeControl: false
-};
+var data = {};
 
 var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
@@ -34,18 +21,8 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
         this.on( CHANGE_EVENT, callback );
     },
 
-    getMapOptions() {
-        return mapOptions;
-    },
-
-    repositionMap( map ) {
-        var center = mapOptions.center;
-        map.setOptions( {
-            center,
-            zoom: 16
-        } );
-        RequestUtils.getNearestStops( map );
-        OverlayStore.addPlaceMarker( map, center );
+    getMapData() {
+        return data;
     }
 } );
 

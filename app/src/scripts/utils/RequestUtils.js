@@ -1,5 +1,5 @@
 import jsonp from 'jsonp';
-import OverlayStore from '../stores/OverlayStore';
+import MarkerUtils from './MarkerUtils';
 import ModalStore from '../stores/ModalStore';
 
 function getBounds( map ) {
@@ -18,13 +18,14 @@ function fetchNearestStops( url, map ) {
         if ( err ) {
             return console.warn( 'Unable to retrieve data' );
         } else {
-            OverlayStore.addBusMarkers( response.markers, map );
+            MarkerUtils.addBusMarkers( response.markers, map );
         }
 
     } ) );
 }
 
 function fetchStopArrivals( url, marker, callback ) {
+
     jsonp( url, ( ( err, response ) => {
 
         if ( err ) {

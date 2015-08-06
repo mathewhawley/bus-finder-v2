@@ -6,7 +6,6 @@ class ModalPanel extends React.Component {
 
     renderHeader() {
         if ( !this.props.data.stop ) return null;
-
         return (
             <ModalHeader
                 className={ 'modal__header' }
@@ -20,10 +19,10 @@ class ModalPanel extends React.Component {
 
     renderBody() {
         if ( !this.props.data.arrivals ) return null;
-
         return (
             <ModalBody
-                className={ 'modal__body'} />
+                className={ 'modal__body' }
+                arrivals={ this.props.data.arrivals } />
         );
     }
 

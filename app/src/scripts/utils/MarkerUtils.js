@@ -15,7 +15,7 @@ function clearMarkers() {
     }
 }
 
-var OverlayStore = {
+var MarkerUtils = {
 
     addPlaceMarker( map, position ) {
 
@@ -34,10 +34,9 @@ var OverlayStore = {
 
         markers.forEach( marker => {
 
-            var position = new google.maps.LatLng( marker.lat, marker.lng ),
-                busMarker = new google.maps.Marker( {
-                    position,
+            var busMarker = new google.maps.Marker( {
                     map,
+                    position: new google.maps.LatLng( marker.lat, marker.lng ),
                     icon: busStopIcon
                 } );
 
@@ -50,4 +49,4 @@ var OverlayStore = {
     }
 };
 
-export default OverlayStore;
+export default MarkerUtils;

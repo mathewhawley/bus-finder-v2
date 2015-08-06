@@ -25,7 +25,6 @@ var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
 
     updateData( arrivals, stop ) {
         data = { arrivals, stop };
-        openModal();
     },
 
     getStopData() {
@@ -40,6 +39,7 @@ AppDispatcher.register( payload => {
     switch( action.type ) {
 
         case ActionTypes.CLICK_MARKER:
+            openModal();
             RequestUtils.getStopInfo( action.marker, () => {
                 ModalStore.emitChange();
             } );
