@@ -30,7 +30,7 @@ class SearchField extends React.Component {
             <input
                 className={ this.props.className + '__search-field' }
                 placeholder={ this.props.placeholder }
-                input={ this.props.inputType }
+                type={ this.props.inputType }
                 onClick={ this.clearInput }
                 ref='searchField' />
         );
