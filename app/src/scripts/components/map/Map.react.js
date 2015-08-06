@@ -28,18 +28,23 @@ class Map extends React.Component {
     }
 
     onChangeEvent() {
-        this.updateMap();
+        this.repositionMap();
         this.getNearestStops();
+        this.addPlaceMarker();
     }
 
-    updateMap() {
+    repositionMap() {
         var center = MapStore.getMapData().center;
         this.map.setOptions( { center, zoom: 16 } );
-        RequestUtils.getNearestStops( this.map );
-        MarkerUtils.addPlaceMarker( this.map, center );
     }
 
     getNearestStops() {
+        RequestUtils.getNearestStops( this.map );
+    }
+
+    addPlaceMarker() {
+        var center = MapStore.getMapData().center;
+        MarkerUtils.addPlaceMarker( this.map, center );
     }
 
     render() {
