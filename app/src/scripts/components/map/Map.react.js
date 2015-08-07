@@ -11,10 +11,7 @@ class Map extends React.Component {
         this.options = {
             center: new google.maps.LatLng( this.props.center.lat, this.props.center.lng ),
             zoom: this.props.zoom,
-            zoomControlOptions: {
-                style: this.props.zoomControlOptions.style,
-                position: this.props.zoomControlOptions.position
-            },
+            zoomControlOptions: this.props.zoomControlOptions,
             streetViewControl: this.props.streetViewControl,
             panControl: this.props.panControl,
             mapTypeControl: this.props.mapTypeControl
@@ -28,22 +25,9 @@ class Map extends React.Component {
     }
 
     onChangeEvent() {
-        this.repositionMap();
-        this.getNearestStops();
-        this.addPlaceMarker();
-    }
-
-    repositionMap() {
         var center = MapStore.getMapData().center;
         this.map.setOptions( { center, zoom: 16 } );
-    }
-
-    getNearestStops() {
         RequestUtils.getNearestStops( this.map );
-    }
-
-    addPlaceMarker() {
-        var center = MapStore.getMapData().center;
         MarkerUtils.addPlaceMarker( this.map, center );
     }
 

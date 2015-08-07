@@ -21,14 +21,14 @@ class ModalPanel extends React.Component {
         if ( !this.props.data.arrivals ) return null;
         return (
             <ModalBody
-                className={ 'modal__body' }
+                className={ this.props.className + '__body' }
                 arrivals={ this.props.data.arrivals } />
         );
     }
 
     render() {
         return (
-            <div className='modal__panel'>
+            <div className={ this.props.className + '__panel' }>
                 { this.renderHeader() }
                 { this.renderBody() }
             </div>

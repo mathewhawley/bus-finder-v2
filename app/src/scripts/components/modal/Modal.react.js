@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import classnames from 'classnames';
 import ModalPanel from './ModalPanel.react';
 import ModalStore from '../../stores/ModalStore';
 
@@ -7,7 +8,10 @@ class Modal extends React.Component {
 
     constructor() {
         super();
-        this.state = ModalStore.getStopData();
+        this.state = {
+            isOpen: false,
+            data: ModalStore.getStopData()
+        };
         this.onChangeEvent = this.onChangeEvent.bind( this );
     }
 
@@ -16,20 +20,32 @@ class Modal extends React.Component {
     }
 
     onChangeEvent() {
-        this.setState( ModalStore.getStopData() );
+        this.setState( { isOpen: true, data: ModalStore.getStopData() } );
+    }
+
+    openModal() {
+        if ( !this.state.isOpen ) return null;
+
+        var className = classnames( this.props.className, this.props.className + '__backdrop' );
+
+        return (
+            <div className={ className } ref='modal'>
+                <ModalPanel
+                    className={ this.props.className }
+                    closeModal={ this.closeModal.bind( this ) }
+                    data={ this.state.data } />
+            </div>
+        );
     }
 
     closeModal() {
-        var modal = ReactDOM.findDOMNode( this.refs.modal );
-        modal.classList.toggle( 'modal--open' );
+        this.setState( { isOpen: false } );
     }
 
     render() {
         return (
-            <div className='modal modal__backdrop' ref='modal'>
-                <ModalPanel
-                    closeModal={ this.closeModal.bind( this ) }
-                    data={ this.state } />
+            <div>
+                { this.openModal() }
             </div>
         );
     }

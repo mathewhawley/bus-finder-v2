@@ -19,7 +19,7 @@ class SiteHeader extends React.Component {
                 <SearchField
                     className={ this.props.className }
                     placeholder={ 'Search for stops near\u2026' }
-                    inputType={ 'text' } />
+                    type={ 'text' } />
             </div>
         );
     }

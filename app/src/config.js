@@ -18,6 +18,7 @@ System.config({
   "map": {
     "babel": "npm:babel-core@5.6.17",
     "babel-runtime": "npm:babel-runtime@5.6.15",
+    "classnames": "npm:classnames@2.1.3",
     "core-js": "npm:core-js@0.9.18",
     "events": "github:jspm/nodelibs-events@0.1.1",
     "flux": "npm:flux@2.0.3",
@@ -139,6 +140,11 @@ System.config({
       "base64-js": "npm:base64-js@0.0.8",
       "ieee754": "npm:ieee754@1.1.6",
       "is-array": "npm:is-array@1.0.1"
+    },
+    "npm:classnames@2.1.3": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.1",
+      "systemjs-json": "github:systemjs/plugin-json@0.1.0"
     },
     "npm:constants-browserify@0.0.1": {
       "systemjs-json": "github:systemjs/plugin-json@0.1.0"

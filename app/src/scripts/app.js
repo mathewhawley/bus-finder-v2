@@ -31,7 +31,8 @@ class App extends React.Component {
                     streetViewControl={ false }
                     panControl={ false }
                     mapTypeControl={ false } />
-                <Modal />
+                <Modal
+                    className={ 'modal' } />
             </div>
         );
     }
