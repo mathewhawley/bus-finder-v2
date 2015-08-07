@@ -33,10 +33,7 @@ class Map extends React.Component {
 
     render() {
         return (
-            <div
-                className={ this.props.className }
-                ref='map'>
-            </div>
+            <div className={ this.props.className } ref='map'></div>
         );
     }
 }

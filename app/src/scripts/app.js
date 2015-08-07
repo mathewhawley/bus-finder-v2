@@ -19,6 +19,7 @@ class App extends React.Component {
                     className={ 'site-header' }
                     logo={ 'assets/logo-small.svg' }
                     reloadApp={ this.reloadApp.bind( this ) } />
+
                 <Map
                     className={ 'map' }
                     center={ { lat: 51.508800, lng: -0.127477 } }
@@ -31,6 +32,7 @@ class App extends React.Component {
                     streetViewControl={ false }
                     panControl={ false }
                     mapTypeControl={ false } />
+
                 <Modal
                     className={ 'modal' } />
             </div>

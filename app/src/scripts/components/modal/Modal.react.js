@@ -20,7 +20,10 @@ class Modal extends React.Component {
     }
 
     onChangeEvent() {
-        this.setState( { isOpen: true, data: ModalStore.getStopData() } );
+        this.setState( {
+            isOpen: true,
+            data: ModalStore.getStopData()
+        } );
     }
 
     openModal() {
@@ -29,7 +32,7 @@ class Modal extends React.Component {
         var className = classnames( this.props.className, this.props.className + '__backdrop' );
 
         return (
-            <div className={ className } ref='modal'>
+            <div className={ className }>
                 <ModalPanel
                     className={ this.props.className }
                     closeModal={ this.closeModal.bind( this ) }
