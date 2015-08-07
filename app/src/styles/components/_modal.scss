@@ -46,6 +46,7 @@ $base: '.modal';
                 p {
                     display: table-cell;
                     vertical-align: middle;
+                    font-weight: 400;
                 }
             }
 
@@ -53,7 +54,7 @@ $base: '.modal';
                 width: 65%;
 
                 p:first-child {
-                    @include x-rem( margin-bottom, 3px );
+                    @include x-rem( margin, 3px 0 );
                 }
 
                 p:last-child {

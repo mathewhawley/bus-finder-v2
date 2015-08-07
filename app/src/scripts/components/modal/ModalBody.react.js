@@ -1,11 +1,24 @@
 import React from 'react';
+import ModalItem from './ModalItem.react';
 
 class ModalBody extends React.Component {
 
     render() {
-        return(
-            <div className={ this.props.className }>
-                <p>Modal Body</p>
+
+        var arrivals = this.props.arrivals.map( ( arrival, i ) => {
+            return (
+                <ModalItem
+                    key={ i }
+                    className={ this.props.className }
+                    routeId={ arrival.routeId }
+                    estimatedWait={ arrival.estimatedWait }
+                    destination={ arrival.destination } />
+            );
+        } );
+
+        return (
+            <div className={ this.props.className + '__body' }>
+                { arrivals }
             </div>
         );
     }

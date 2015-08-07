@@ -16,7 +16,7 @@ class ModalPanel extends React.Component {
                     closeModal={ this.props.closeModal } />
 
                 <ModalBody
-                    className={ this.props.className + '__body' }
+                    className={ this.props.className }
                     arrivals={ this.props.data.arrivals } />
 
             </div>
