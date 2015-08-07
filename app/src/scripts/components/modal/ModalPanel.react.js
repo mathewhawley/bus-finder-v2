@@ -9,12 +9,11 @@ class ModalPanel extends React.Component {
             <div className={ this.props.className + '__panel' }>
 
                 <ModalHeader
-                    className={ 'modal__header' }
+                    className={ this.props.className }
                     stopName={ this.props.data.stop.name }
                     stopIndicator={ this.props.data.stop.stopIndicator }
                     towards={ this.props.data.stop.towards }
-                    closeModal={ this.props.closeModal }
-                    btnClassName={ 'modal__close-button' } />
+                    closeModal={ this.props.closeModal } />
 
                 <ModalBody
                     className={ this.props.className + '__body' }

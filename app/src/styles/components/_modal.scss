@@ -1,4 +1,6 @@
-.modal {
+$base: '.modal';
+
+#{$base} {
     position: absolute;
     top: 0;
     left: 0;
@@ -6,25 +8,75 @@
     height: 100%;
 
     &__backdrop {
-        background: rgba( $black, .6 );
+        background-color: rgba( $black, .6 );
     }
 
     &__panel {
         height: 100%;
         background-color: $white;
+
+        #{$base}__header {
+            @include x-rem( padding, 20px );
+            @include x-rem( font-size, 18px );
+
+            background-color: $brand-dark-grey;
+            font-family: $font-stack;
+            color: $white;
+
+            p {
+                margin: 0;
+            }
+
+            #{$base}__stop-indicator,
+            #{$base}__stop-name {
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            #{$base}__stop-indicator {
+                @include x-rem( width, 45px );
+                @include x-rem( height, 45px );
+                @include x-rem( margin-right, 15px );
+
+                display: inline-table;
+                background-color: $brand-green;
+                border-radius: 50%;
+                text-align: center;
+
+                p {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+            }
+
+            #{$base}__stop-name {
+                width: 65%;
+
+                p:first-child {
+                    @include x-rem( margin-bottom, 3px );
+                }
+
+                p:last-child {
+                    @include x-rem( font-size, 14px );
+                    font-weight: 300;
+                }
+            }
+        }
     }
 
     &__close-button {
-        @include x-rem( padding, 20px );
-        @include x-rem( font-size, 30px );
+        @include x-rem( padding, 20px 20px 22px );
+        @include x-rem( font-size, 45px );
 
         position: absolute;
+        top: 0;
         right: 0;
         border: none;
         cursor: pointer;
         line-height: 1ex;
         background: none;
         font-weight: 200;
+        color: inherit;
 
         &:after {
             content: '\00d7';

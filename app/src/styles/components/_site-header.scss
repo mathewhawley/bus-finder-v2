@@ -35,15 +35,16 @@
     }
 
     &__search-field {
-        @include x-rem( height, 30px );
+        @include x-rem( height, 35px );
         @include x-rem( padding-left, 12px );
         @include x-rem( margin-top, 16px );
         @include x-rem( border-radius, 3px );
-        @include x-rem( font-size, 14px );
+        @include x-rem( font-size, 16px );
 
         width: 100%;
         border: none;
-        font-family: 'Roboto', 'Helvetica', sans-serif;
+        font-family: $font-stack;
+        font-weight: 300;
 
         &:focus {
             outline: none;
@@ -54,4 +55,6 @@
 // autocomplete dropdown elements
 .pac-item {
     @include x-rem( padding, 5px 10px );
+
+    font-family: $font-stack;
 }
