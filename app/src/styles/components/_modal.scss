@@ -26,7 +26,7 @@ $base: '.modal';
             @include x-rem( font-size, 18px );
 
             flex: 0 0 auto;
-            background-color: $brand-dark-grey;
+            background-color: $brand-grey;
             font-family: $font-stack;
             color: $white;
 
@@ -74,15 +74,67 @@ $base: '.modal';
 
             flex: 1 1 auto;
             overflow: scroll;
+            font-family: $font-stack;
+            color: $brand-grey;
+        }
 
-            #{$base}__item {
-                @include x-rem( margin-bottom, 20px );
+        #{$base}__item {
+            @include x-rem( margin-bottom, 18px );
+            @include x-rem( padding-bottom, 10px );
+
+            border-bottom: 1px solid tint( $brand-grey, 90% );
+
+            &:last-child {
+                margin: 0;
+                padding: 0;
+                border: none;
+            }
+
+            &-route,
+            &-wait {
+                display: inline-block;
+            }
+
+            &-route {
+                width: 70%;
+
+                p:first-child {
+                    @include x-rem( padding, 3px 12px );
+                    @include x-rem( border-radius, 16px );
+                    @include x-rem( margin-bottom, 7px );
+                    @include x-rem( font-size, 14px );
+
+                    display: inline-block;
+                    background-color: $brand-green;
+                    color: $white;
+                    font-weight: 500;
+                }
+
+                p:last-child {
+                    @include x-rem( font-size, 18px );
+                }
+            }
+
+            &-wait {
+                @include x-rem( font-size, 32px );
+
+                font-weight: 300;
+                width: 30%;
+                text-align: right;
+
+                span:last-child {
+                    @include x-rem( font-size, 14px );
+                    @include x-rem( margin-left, 5px );
+
+                    color: tint( $brand-grey, 60% );
+                    font-weight: 400;
+                }
             }
         }
     }
 
     &__close-button {
-        @include x-rem( padding, 20px 20px 22px );
+        @include x-rem( padding, 18px 20px 22px );
         @include x-rem( font-size, 45px );
 
         position: absolute;
