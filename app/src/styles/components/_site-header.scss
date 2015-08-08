@@ -15,46 +15,4 @@
             cursor: pointer;
         }
     }
-
-    &__search-button {
-        @include x-rem( width, 45px );
-        @include x-rem( height, 45px );
-        @include x-rem( background-size, 20px );
-        @include x-rem( border-radius, 8px );
-
-        float: right;
-        background-color: $brand-green;
-        background-image: url( 'assets/icon-location.svg' );
-        background-repeat: no-repeat;
-        background-position: center;
-
-        &:hover {
-            cursor: pointer;
-            background-color: $brand-green-shade-10;
-        }
-    }
-
-    &__search-field {
-        @include x-rem( height, 35px );
-        @include x-rem( padding-left, 12px );
-        @include x-rem( margin-top, 16px );
-        @include x-rem( border-radius, 3px );
-        @include x-rem( font-size, 16px );
-
-        width: 100%;
-        border: none;
-        font-family: $font-stack;
-        font-weight: 300;
-
-        &:focus {
-            outline: none;
-        }
-    }
-}
-
-// autocomplete dropdown elements
-.pac-item {
-    @include x-rem( padding, 5px 10px );
-
-    font-family: $font-stack;
 }

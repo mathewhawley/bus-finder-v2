@@ -1,0 +1,17 @@
+.site-header__search-button {
+    @include x-rem( width, 45px );
+    @include x-rem( height, 45px );
+    @include x-rem( background-size, 20px );
+    @include x-rem( border-radius, 8px );
+
+    float: right;
+    background-color: $brand-green;
+    background-image: url( 'assets/icon-location.svg' );
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $brand-green-shade-10;
+    }
+}

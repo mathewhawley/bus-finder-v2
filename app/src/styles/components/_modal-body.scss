@@ -1,0 +1,8 @@
+.modal__body {
+    @include x-rem( padding, 20px );
+
+    flex: 1 1 auto;
+    overflow: scroll;
+    font-family: $font-stack;
+    color: $brand-grey;
+}

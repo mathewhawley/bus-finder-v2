@@ -1,0 +1,69 @@
+.modal {
+
+    &__header {
+        @include x-rem( padding, 20px );
+        @include x-rem( font-size, 18px );
+
+        flex: 0 0 auto;
+        background-color: $brand-grey;
+        font-family: $font-stack;
+        color: $white;
+    }
+
+    &__stop-indicator,
+    &__stop-name {
+        vertical-align: top;
+    }
+
+    &__stop-indicator {
+        @include x-rem( width, 45px );
+        @include x-rem( height, 45px );
+        @include x-rem( margin-right, 15px );
+
+        display: inline-table;
+        background-color: $brand-green;
+        border-radius: 50%;
+        text-align: center;
+
+        p {
+            @include x-rem( font-size, 18px );
+
+            display: table-cell;
+            vertical-align: middle;
+            font-weight: 500;
+        }
+    }
+
+    &__stop-name {
+        display: inline-block;
+        width: 65%;
+
+        p:first-child {
+            @include x-rem( margin, 3px 0 );
+        }
+
+        p:last-child {
+            @include x-rem( font-size, 14px );
+            font-weight: 300;
+        }
+    }
+
+    &__close-button {
+        @include x-rem( padding, 18px 20px 22px );
+        @include x-rem( font-size, 45px );
+
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: none;
+        cursor: pointer;
+        line-height: 1ex;
+        background: none;
+        font-weight: 200;
+        color: inherit;
+
+        &:after {
+            content: '\00d7';
+        }
+    }
+}
