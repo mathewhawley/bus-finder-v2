@@ -7,11 +7,17 @@ $base: '.modal';
     width: 100%;
     height: 100%;
 
+    p {
+        margin: 0;
+    }
+
     &__backdrop {
         background-color: rgba( $black, .6 );
     }
 
     &__panel {
+        display: flex;
+        flex-flow: column;
         height: 100%;
         background-color: $white;
 
@@ -19,17 +25,13 @@ $base: '.modal';
             @include x-rem( padding, 20px );
             @include x-rem( font-size, 18px );
 
+            flex: 0 0 auto;
             background-color: $brand-dark-grey;
             font-family: $font-stack;
             color: $white;
 
-            p {
-                margin: 0;
-            }
-
             #{$base}__stop-indicator,
             #{$base}__stop-name {
-                display: inline-block;
                 vertical-align: top;
             }
 
@@ -44,13 +46,16 @@ $base: '.modal';
                 text-align: center;
 
                 p {
+                    @include x-rem( font-size, 18px );
+
                     display: table-cell;
                     vertical-align: middle;
-                    font-weight: 400;
+                    font-weight: 500;
                 }
             }
 
             #{$base}__stop-name {
+                display: inline-block;
                 width: 65%;
 
                 p:first-child {
@@ -61,6 +66,17 @@ $base: '.modal';
                     @include x-rem( font-size, 14px );
                     font-weight: 300;
                 }
+            }
+        }
+
+        #{$base}__body {
+            @include x-rem( padding, 20px );
+
+            flex: 1 1 auto;
+            overflow: scroll;
+
+            #{$base}__item {
+                @include x-rem( margin-bottom, 20px );
             }
         }
     }
