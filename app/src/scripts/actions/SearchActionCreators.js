@@ -1,10 +1,9 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 
-var ActionTypes = AppConstants.ActionTypes;
+const ActionTypes = AppConstants.ActionTypes;
 
-export default {
-
+const SearchActionCreators = {
     repositionMap( lat, lng ) {
         AppDispatcher.handleViewAction( {
             type: ActionTypes.REPOSITION_MAP,
@@ -20,3 +19,5 @@ export default {
         } );
     }
 };
+
+export default SearchActionCreators;

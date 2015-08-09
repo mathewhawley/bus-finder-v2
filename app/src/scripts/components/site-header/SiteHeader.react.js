@@ -3,7 +3,6 @@ import SearchButton from './SearchButton.react';
 import SearchField from './SearchField.react';
 
 class SiteHeader extends React.Component {
-
     render() {
         return (
             <div className={ this.props.className }>

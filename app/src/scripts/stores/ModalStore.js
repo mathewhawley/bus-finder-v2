@@ -3,13 +3,12 @@ import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 import RequestUtils from '../utils/RequestUtils';
 
-var ActionTypes = AppConstants.ActionTypes;
+const ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
 var data = {};
 
-var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
-
+const ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
     emitChange() {
         this.emit( CHANGE_EVENT );
     },
@@ -28,17 +27,13 @@ var ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
 } );
 
 AppDispatcher.register( payload => {
-
-    var action = payload.action;
-
+    const action = payload.action;
     switch( action.type ) {
-
         case ActionTypes.CLICK_MARKER:
             RequestUtils.getStopInfo( action.marker, () => {
                 ModalStore.emitChange();
             } );
             break;
-
         default:
             // do nothing
     }

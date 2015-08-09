@@ -2,10 +2,8 @@ import React from 'react';
 import ModalItem from './ModalItem.react';
 
 class ModalBody extends React.Component {
-
     render() {
-
-        var arrivals = this.props.arrivals.map( ( arrival, i ) => {
+        const arrivals = this.props.arrivals.map( ( arrival, i ) => {
             return (
                 <ModalItem
                     key={ i }

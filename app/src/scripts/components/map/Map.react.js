@@ -4,7 +4,6 @@ import RequestUtils from '../../utils/RequestUtils';
 import MarkerUtils from '../../utils/MarkerUtils';
 
 class Map extends React.Component {
-
     constructor( props ) {
         super( props );
         this.map;
@@ -25,7 +24,7 @@ class Map extends React.Component {
     }
 
     onChangeEvent() {
-        var center = MapStore.getMapData().center;
+        const center = MapStore.getMapData().center;
         this.map.setOptions( { center, zoom: 16 } );
         RequestUtils.getNearestStops( this.map );
         MarkerUtils.addPlaceMarker( this.map, center );

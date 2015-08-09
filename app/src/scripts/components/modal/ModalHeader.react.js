@@ -1,15 +1,12 @@
 import React from 'react';
 
 class ModalHeader extends React.Component {
-
     render() {
-
-        var stopIndicator = this.props.stopIndicator === null ? 'N/A' : this.props.stopIndicator,
-            towards = this.props.towards === null ? 'N/A' : this.props.towards;
+        const stopIndicator = this.props.stopIndicator === null ? 'N/A' : this.props.stopIndicator;
+        const towards = this.props.towards === null ? 'N/A' : this.props.towards;
 
         return (
             <div className={ this.props.className + '__header' }>
-
                 <div className={ this.props.className + '__stop-indicator' }>
                     <p>{ stopIndicator }</p>
                 </div>
@@ -22,7 +19,6 @@ class ModalHeader extends React.Component {
                 <button
                     className={ this.props.className + '__close-button' }
                     onClick={ this.props.closeModal }></button>
-
             </div>
         );
     }

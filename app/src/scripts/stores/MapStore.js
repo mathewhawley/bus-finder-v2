@@ -2,17 +2,16 @@ import Events from 'events';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 
-var ActionTypes = AppConstants.ActionTypes;
+const ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
+
+var data = {};
 
 function updateMapCenter( lat, lng ) {
     data.center = new google.maps.LatLng( lat, lng );
 }
 
-var data = {};
-
-var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
-
+const MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
     emitChange() {
         this.emit( CHANGE_EVENT );
     },
@@ -27,16 +26,12 @@ var MapStore = Object.assign( {}, Events.EventEmitter.prototype, {
 } );
 
 AppDispatcher.register( payload => {
-
-    var action = payload.action;
-
+    const action = payload.action;
     switch( action.type ) {
-
         case ActionTypes.REPOSITION_MAP:
             updateMapCenter( action.lat, action.lng );
             MapStore.emitChange();
             break;
-
         default:
             // do nothing
     }

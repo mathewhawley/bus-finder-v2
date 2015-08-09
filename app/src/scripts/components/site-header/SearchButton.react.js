@@ -2,7 +2,6 @@ import React from 'react';
 import SearchActionCreators from '../../actions/SearchActionCreators';
 
 class SearchButton extends React.Component {
-
     constructor() {
         super();
         this.handleClick = this.handleClick.bind( this );
@@ -17,7 +16,7 @@ class SearchButton extends React.Component {
     }
 
     success( position ) {
-        var { latitude, longitude } = position.coords;
+        const { latitude, longitude } = position.coords;
         SearchActionCreators.repositionMap( latitude, longitude );
     }
 

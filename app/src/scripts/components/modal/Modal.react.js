@@ -4,7 +4,6 @@ import ModalPanel from './ModalPanel.react';
 import ModalStore from '../../stores/ModalStore';
 
 class Modal extends React.Component {
-
     constructor() {
         super();
         this.state = {
@@ -27,8 +26,7 @@ class Modal extends React.Component {
 
     openModal() {
         if ( !this.state.isOpen ) return null;
-
-        var className = classnames( this.props.className, this.props.className + '__backdrop' );
+        const className = classnames( this.props.className, this.props.className + '__backdrop' );
 
         return (
             <div className={ className }>
@@ -45,11 +43,7 @@ class Modal extends React.Component {
     }
 
     render() {
-        return (
-            <div>
-                { this.openModal() }
-            </div>
-        );
+        return <div>{ this.openModal() }</div>;
     }
 }
 

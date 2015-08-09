@@ -5,17 +5,13 @@ function sortWaitData( data ) {
         return <p>{ data.charAt( 0 ).toUpperCase() + data.slice( 1 ) }</p>;
     } else {
         let dataArray = data.split( ' ' );
-        return  <p>{ dataArray[0] }{ dataArray[1] }</p>;
+        return <p>{ dataArray[0] }{ dataArray[1] }</p>;
     }
 }
 
 class ModalItem extends React.Component {
-
     render() {
-
-        var waitData = this.props.estimatedWait,
-            estimatedWait = sortWaitData( waitData );
-
+        const estimatedWait = sortWaitData( this.props.estimatedWait );
         return (
             <div className={ this.props.className + '__item' }>
                 <div className={ this.props.className + '__item-route' }>
