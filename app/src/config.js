@@ -18,6 +18,7 @@ System.config({
   "map": {
     "babel": "npm:babel-core@5.6.17",
     "babel-runtime": "npm:babel-runtime@5.6.15",
+    "breakpoint-sass": "npm:breakpoint-sass@2.6.1",
     "classnames": "npm:classnames@2.1.3",
     "core-js": "npm:core-js@0.9.18",
     "events": "github:jspm/nodelibs-events@0.1.1",
@@ -101,6 +102,9 @@ System.config({
     },
     "npm:babel-runtime@5.6.15": {
       "process": "github:jspm/nodelibs-process@0.1.1"
+    },
+    "npm:breakpoint-sass@2.6.1": {
+      "path": "github:jspm/nodelibs-path@0.1.0"
     },
     "npm:browserify-aes@1.0.2": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

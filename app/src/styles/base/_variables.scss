@@ -11,3 +11,7 @@ $brand-green-shade-10: shade( $brand-green, 10 );
 
 // Typography
 $font-stack: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+
+// Breakpoints
+$medium-up: 'only screen' 37.5em;
+$large-up: 'only screen' 60em;

@@ -2,7 +2,7 @@
     @include clearfix();
     @include x-rem( padding, 16px );
 
-    background: $brand-grey;
+    background-color: $brand-grey;
     font-size: 0;
 
     &__logo {
