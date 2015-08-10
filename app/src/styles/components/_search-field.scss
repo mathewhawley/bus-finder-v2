@@ -13,6 +13,14 @@
     &:focus {
         outline: none;
     }
+
+    @include breakpoint( $medium-up ) {
+        position: absolute;
+        width: 45%;
+        left: 27.5%;
+        top: 22px;
+        margin: 0;
+    }
 }
 
 // autocomplete dropdown elements

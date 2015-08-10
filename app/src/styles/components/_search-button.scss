@@ -12,6 +12,6 @@
 
     &:hover {
         cursor: pointer;
-        background-color: $brand-green-shade-10;
+        background-color: shade( $brand-green, 10% );
     }
 }
