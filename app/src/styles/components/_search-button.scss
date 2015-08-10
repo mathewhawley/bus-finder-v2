@@ -14,4 +14,12 @@
         cursor: pointer;
         background-color: shade( $brand-green, 10% );
     }
+
+    @include breakpoint( $medium-up ) {
+        @include x-rem( width, 35px );
+        @include x-rem( height, 35px );
+        @include x-rem( border-radius, 4px );
+
+        background-size: auto 55%;
+    }
 }

@@ -9,16 +9,21 @@
     border: none;
     font-family: $font-stack;
     font-weight: 300;
+    background-color: tint( $brand-grey, 90% );
+    transition: 0.3s ease;
 
     &:focus {
         outline: none;
+        background-color: $white;
     }
 
     @include breakpoint( $medium-up ) {
+        @include x-rem( height, 32px );
+
         position: absolute;
         width: 45%;
         left: 27.5%;
-        top: 22px;
+        top: 18px;
         margin: 0;
     }
 }

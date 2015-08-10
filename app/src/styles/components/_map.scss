@@ -7,6 +7,6 @@
     height: calc( 100% - 128px );
 
     @include breakpoint( $medium-up ) {
-        height: calc( 100% - 77px );
+        height: calc( 100% - 67px );
     }
 }

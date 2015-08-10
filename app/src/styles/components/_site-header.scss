@@ -14,5 +14,9 @@
         &:hover {
             cursor: pointer;
         }
+
+        @include breakpoint( $medium-up ) {
+            @include x-rem( height, 40px );
+        }
     }
 }
