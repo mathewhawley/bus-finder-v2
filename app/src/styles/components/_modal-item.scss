@@ -10,6 +10,13 @@
         border: none;
     }
 
+    @include breakpoint( $medium-up ) {
+        &,
+        &:last-child {
+            @include x-rem( padding, 0 20px 10px );
+        }
+    }
+
     &-route,
     &-wait {
         display: inline-block;

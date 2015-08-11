@@ -3,4 +3,12 @@
     flex-flow: column;
     height: 100%;
     background-color: $white;
+
+    @include breakpoint( $medium-up ) {
+        position: absolute;
+        left: 15%;
+        top: 10%;
+        width: 70%;
+        height: 80%;
+    }
 }

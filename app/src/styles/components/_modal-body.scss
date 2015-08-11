@@ -5,4 +5,8 @@
     overflow: scroll;
     font-family: $font-stack;
     color: $brand-grey;
+
+    @include breakpoint( $medium-up ) {
+        @include x-rem( padding, 20px 0 0 );
+    }
 }
