@@ -1,8 +1,25 @@
 .modal__panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-flow: column;
-    height: 100%;
     background-color: $white;
+    animation-duration: .24s;
+
+    p {
+        margin: 0;
+    }
+
+    &-enter {
+        animation-name: modalPanelEnter;
+    }
+
+    &-leave {
+        animation-name: modalPanelLeave;
+    }
 
     @include breakpoint( $medium-up ) {
         position: absolute;
@@ -10,5 +27,10 @@
         top: 10%;
         width: 70%;
         height: 80%;
+    }
+
+    @include breakpoint( $large-up ) {
+        width: 45%;
+        left: 27.5%;
     }
 }

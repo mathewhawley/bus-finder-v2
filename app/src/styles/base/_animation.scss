@@ -1,0 +1,24 @@
+// modal backdrop
+
+@keyframes modalBackdropEnter {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalBackdropLeave {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+
+// modal panel
+
+@keyframes modalPanelEnter {
+    from { opacity: 0; transform: scale( .96 ); }
+    to { opacity: 1; transform: scale( 1 ); }
+}
+
+@keyframes modalPanelLeave {
+    from { opacity: 1; transform: scale( 1 ); }
+    to { opacity: 0; transform: scale( .8 ); }
+}

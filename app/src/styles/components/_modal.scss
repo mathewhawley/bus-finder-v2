@@ -1,15 +1,18 @@
-.modal {
+.modal__backdrop {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba( $black, .6 );
+    animation-duration: .14s;
 
-    p {
-        margin: 0;
+    &-enter {
+        animation-name: modalBackdropEnter;
     }
 
-    &__backdrop {
-        background-color: rgba( $black, .6 );
+    &-leave {
+        animation-name: modalBackdropLeave;
+        animation-delay: .24s;
     }
 }

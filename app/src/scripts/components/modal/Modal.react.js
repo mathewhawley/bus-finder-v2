@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react/lib/ReactCSSTransitionGroup';
 import classnames from 'classnames';
 import ModalPanel from './ModalPanel.react';
 import ModalStore from '../../stores/ModalStore';
@@ -24,17 +25,21 @@ class Modal extends React.Component {
         } );
     }
 
-    openModal() {
+    renderBackdrop() {
         if ( !this.state.isOpen ) return null;
-        const className = classnames( this.props.className, this.props.className + '__backdrop' );
+        const className = classnames( this.props.className + '__backdrop' );
+
+        return <div className={ className }></div>;
+    }
+
+    renderPanel() {
+        if ( !this.state.isOpen ) return null;
 
         return (
-            <div className={ className }>
-                <ModalPanel
-                    className={ this.props.className }
-                    closeModal={ this.closeModal.bind( this ) }
-                    data={ this.state.data } />
-            </div>
+            <ModalPanel
+                className={ this.props.className }
+                closeModal={ this.closeModal.bind( this ) }
+                data={ this.state.data } />
         );
     }
 
@@ -43,7 +48,16 @@ class Modal extends React.Component {
     }
 
     render() {
-        return <div>{ this.openModal() }</div>;
+        return (
+            <div>
+                <ReactCSSTransitionGroup transitionName='modal__backdrop'>
+                    { this.renderBackdrop() }
+                </ReactCSSTransitionGroup>
+                <ReactCSSTransitionGroup transitionName='modal__panel'>
+                    { this.renderPanel() }
+                </ReactCSSTransitionGroup>
+            </div>
+        );
     }
 }
 
