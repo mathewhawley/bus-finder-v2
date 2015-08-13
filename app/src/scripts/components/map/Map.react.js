@@ -10,6 +10,8 @@ class Map extends React.Component {
         this.options = {
             center: new google.maps.LatLng( this.props.center.lat, this.props.center.lng ),
             zoom: this.props.zoom,
+            minZoom: this.props.minZoom,
+            scrollwheel: this.props.scrollwheel,
             zoomControlOptions: this.props.zoomControlOptions,
             streetViewControl: this.props.streetViewControl,
             panControl: this.props.panControl,
@@ -25,9 +27,18 @@ class Map extends React.Component {
 
     onChangeEvent() {
         const center = MapStore.getMapData().center;
+        this.repositionMap( center );
+        this.getNearestStops();
+    }
+
+    repositionMap( center ) {
         this.map.setOptions( { center, zoom: 16 } );
-        RequestUtils.getNearestStops( this.map );
         MarkerUtils.addPlaceMarker( this.map, center );
+    }
+
+    getNearestStops() {
+        RequestUtils.getNearestStops( this.map );
+        google.maps.event.addListener( this.map, 'dragend', () => RequestUtils.getNearestStops( this.map ) );
     }
 
     render() {

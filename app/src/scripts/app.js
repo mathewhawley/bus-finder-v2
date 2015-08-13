@@ -22,7 +22,8 @@ class App extends React.Component {
                 <Map
                     className={ 'map' }
                     center={ { lat: 51.508800, lng: -0.127477 } }
-                    zoom={ 12 }
+                    zoom={ 13 }
+                    minZoom={ 13 }
                     scrollwheel={ false }
                     zoomControlOptions={ {
                         style: google.maps.ZoomControlStyle.LARGE,
