@@ -8,6 +8,7 @@ This is an exercise to better learn several development tools and processes that
 * SASS
 * Gulp
 * JSPM/SystemJS
+* Babel
 * React
 * ES6
 
@@ -21,7 +22,7 @@ $ git clone git@github.com:mathewhawley/bus-finder-v2.git
 Then run:
 
 ```
-$ jspm install
 $ npm install
+$ jspm install
 $ gulp
 ```
