@@ -6,10 +6,7 @@ import ModalStore from '../../stores/ModalStore';
 class Modal extends React.Component {
     constructor() {
         super();
-        this.state = {
-            isOpen: false,
-            data: ModalStore.getStopData()
-        };
+        this.state = { isOpen: false, data: ModalStore.getStopData() };
         this.onChangeEvent = this.onChangeEvent.bind( this );
         this.closeModal = this.closeModal.bind( this );
     }
@@ -19,10 +16,7 @@ class Modal extends React.Component {
     }
 
     onChangeEvent() {
-        this.setState( {
-            isOpen: true,
-            data: ModalStore.getStopData()
-        } );
+        this.setState( { isOpen: true, data: ModalStore.getStopData() } );
     }
 
     renderBackdrop() {

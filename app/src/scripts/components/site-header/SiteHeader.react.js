@@ -8,7 +8,7 @@ class SiteHeader extends React.Component {
             <div className={ this.props.className }>
                 <img
                     className={ this.props.className + '__logo' }
-                    src={ this.props.logo }
+                    src={ 'assets/logo-small.svg' }
                     alt='bus finder logo'
                     onClick={ this.props.reloadApp } />
 

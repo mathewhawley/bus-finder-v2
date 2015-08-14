@@ -16,7 +16,6 @@ class App extends React.Component {
             <div className='wrapper'>
                 <SiteHeader
                     className={ 'site-header' }
-                    logo={ 'assets/logo-small.svg' }
                     reloadApp={ this.reloadApp.bind( this ) } />
 
                 <Map
