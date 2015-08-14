@@ -4,24 +4,14 @@ import RequestUtils from '../../utils/RequestUtils';
 import MarkerUtils from '../../utils/MarkerUtils';
 
 class Map extends React.Component {
-    constructor( props ) {
-        super( props );
+    constructor() {
+        super();
         this.map;
-        this.options = {
-            center: new google.maps.LatLng( this.props.center.lat, this.props.center.lng ),
-            zoom: this.props.zoom,
-            minZoom: this.props.minZoom,
-            scrollwheel: this.props.scrollwheel,
-            zoomControlOptions: this.props.zoomControlOptions,
-            streetViewControl: this.props.streetViewControl,
-            panControl: this.props.panControl,
-            mapTypeControl: this.props.mapTypeControl
-        };
         this.onChangeEvent = this.onChangeEvent.bind( this );
     }
 
     componentDidMount() {
-        this.map = new google.maps.Map( this.refs.map, this.options );
+        this.map = new google.maps.Map( this.refs.map, this.props.options );
         MapStore.addChangeListener( this.onChangeEvent );
     }
 

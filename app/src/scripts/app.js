@@ -21,17 +21,19 @@ class App extends React.Component {
 
                 <Map
                     className={ 'map' }
-                    center={ { lat: 51.508800, lng: -0.127477 } }
-                    zoom={ 13 }
-                    minZoom={ 13 }
-                    scrollwheel={ false }
-                    zoomControlOptions={ {
-                        style: google.maps.ZoomControlStyle.LARGE,
-                        position: google.maps.ControlPosition.RIGHT
-                    } }
-                    streetViewControl={ false }
-                    panControl={ false }
-                    mapTypeControl={ false } />
+                    options={ {
+                        center: new google.maps.LatLng( 51.508800, -0.127477 ),
+                        zoom: 13,
+                        minZoom: 13,
+                        scrollwheel: false,
+                        zoomControlOptions: {
+                            style: google.maps.ZoomControlStyle.LARGE,
+                            position: google.maps.ControlPosition.RIGHT
+                        },
+                        streetViewControl: false,
+                        panControl: false,
+                        mapTypeControl: false
+                    } } />
 
                 <Modal
                     className={ 'modal' } />
