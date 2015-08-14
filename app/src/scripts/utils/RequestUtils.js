@@ -34,8 +34,8 @@ function fetchStopArrivals( url, marker, callback ) {
 
 const RequestUtils = {
     getNearestStops( map ) {
-        const bounds = getBounds( map ),
-            url = `http://digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
+        const bounds = getBounds( map );
+        const url = `http://digitaslbi-id-test.herokuapp.com/bus-stops?northEast=${ bounds[0] },${ bounds[1] }&southWest=${ bounds[2] },${ bounds[3] }`;
         fetchNearestStops( url, map );
     },
 

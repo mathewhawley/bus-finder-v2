@@ -2,8 +2,5 @@
 node_modules
 app/src/lib
 
-# Development CSS
-app/src/styles/css
-
 # Build files
 app/dist

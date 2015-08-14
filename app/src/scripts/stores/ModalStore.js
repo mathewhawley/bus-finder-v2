@@ -30,9 +30,7 @@ AppDispatcher.register( payload => {
     const action = payload.action;
     switch( action.type ) {
         case ActionTypes.CLICK_MARKER:
-            RequestUtils.getStopInfo( action.marker, () => {
-                ModalStore.emitChange();
-            } );
+            RequestUtils.getStopInfo( action.marker, () => ModalStore.emitChange() );
             break;
         default:
             // do nothing
