@@ -1,20 +1,14 @@
 .modal__item {
     @include x-rem( margin-bottom, 18px );
-    @include x-rem( padding-bottom, 10px );
+    @include x-rem( padding, 0 20px 10px );
 
     border-bottom: 1px solid tint( $brand-grey, 90% );
 
     &:last-child {
-        margin: 0;
-        padding: 0;
-        border: none;
-    }
+        @include x-rem( padding, 0 20px 10px );
 
-    @include breakpoint( $medium-up ) {
-        &,
-        &:last-child {
-            @include x-rem( padding, 0 20px 10px );
-        }
+        margin: 0;
+        border: none;
     }
 
     &-route,

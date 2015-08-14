@@ -30,7 +30,8 @@
     }
 
     @include breakpoint( $large-up ) {
-        width: 45%;
-        left: 27.5%;
+        @include x-rem( width, 500px );
+
+        left: calc( 50% - 250px );
     }
 }
