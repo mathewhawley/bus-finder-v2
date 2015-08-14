@@ -25,6 +25,12 @@
         top: 18px;
         margin: 0;
     }
+
+    @include breakpoint( $large-up ) {
+        @include x-rem( width, 500px );
+
+        left: calc( 50% - 250px );
+    }
 }
 
 // autocomplete dropdown elements
