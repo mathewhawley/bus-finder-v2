@@ -2,9 +2,10 @@ import React from 'react';
 
 function sortWaitData( data ) {
     if ( data === 'due' ) {
-        return <p>{ data.charAt( 0 ).toUpperCase() + data.slice( 1 ) }</p>;
+        const capitalized = data.charAt( 0 ).toUpperCase() + data.slice( 1 );
+        return <p>{ capitalized }</p>;
     } else {
-        let dataArray = data.split( ' ' );
+        const dataArray = data.split( ' ' );
         return <p>{ dataArray[0] }{ dataArray[1] }</p>;
     }
 }
