@@ -34,8 +34,7 @@ class App extends React.Component {
                         mapTypeControl: false
                     } } />
 
-                <Modal
-                    className={ 'modal' } />
+                <Modal className={ 'modal' } />
             </div>
         );
     }

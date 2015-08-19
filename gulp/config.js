@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = {
-
     browsersync: {
         development: {
             server: {
@@ -11,14 +10,12 @@ module.exports = {
             files: 'app/src'
         }
     },
-
     watch: {
         sass: 'app/src/styles/**/*.scss',
         javascript: 'app/src/scripts/**/*.js',
         html: 'app/src/*.html',
         assets: 'app/src/assets/**/*'
     },
-
     clean: {
         src: 'app/dist'
     }
