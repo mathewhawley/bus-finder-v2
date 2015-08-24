@@ -5,7 +5,7 @@ import AppConstants from '../constants/AppConstants';
 const ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
-var data = {};
+const data = {};
 
 function updateMapCenter( lat, lng ) {
     data.center = new google.maps.LatLng( lat, lng );

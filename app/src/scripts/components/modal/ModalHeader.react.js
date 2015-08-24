@@ -24,4 +24,4 @@ class ModalHeader extends React.Component {
     }
 }
 
-export default ModalHeader
+export default ModalHeader;

@@ -6,7 +6,7 @@ import RequestUtils from '../utils/RequestUtils';
 const ActionTypes = AppConstants.ActionTypes;
 const CHANGE_EVENT = 'change';
 
-var data = {};
+const data = {};
 
 const ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
     emitChange() {
@@ -18,7 +18,8 @@ const ModalStore = Object.assign( {}, Events.EventEmitter.prototype, {
     },
 
     updateData( arrivals, stop ) {
-        data = { arrivals, stop };
+        data.arrivals = arrivals;
+        data.stop = stop;
     },
 
     getStopData() {

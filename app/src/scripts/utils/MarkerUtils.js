@@ -1,18 +1,14 @@
 import SearchActionCreators from '../actions/SearchActionCreators';
 
-var markerArray = [];
 const placeIcon = '../../assets/marker-place.svg';
 const busStopIcon = '../../assets/marker-bus-stop.svg';
+let markerArray = [];
 
 function deleteMarkers() {
-    clearMarkers();
-    markerArray = [];
-}
-
-function clearMarkers() {
-    for ( let i = 0, l = markerArray.length; i < l; i++ ) {
-        markerArray[i].setMap( null );
+    for ( let marker of markerArray ) {
+        marker.setMap( null );
     }
+    markerArray = [];
 }
 
 const MarkerUtils = {
