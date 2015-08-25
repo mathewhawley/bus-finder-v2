@@ -10,11 +10,6 @@
     background-repeat: no-repeat;
     background-position: center;
 
-    &:hover {
-        cursor: pointer;
-        background-color: shade( $brand-green, 10% );
-    }
-
     @include breakpoint( $medium-up ) {
         @include x-rem( width, 35px );
         @include x-rem( height, 35px );
@@ -22,4 +17,10 @@
 
         background-size: auto 50%;
     }
+
+    &:hover {
+        cursor: pointer;
+        background-color: shade( $brand-green, 10% );
+    }
+
 }

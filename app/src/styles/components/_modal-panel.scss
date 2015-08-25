@@ -9,18 +9,6 @@
     background-color: $white;
     animation-duration: .24s;
 
-    p {
-        margin: 0;
-    }
-
-    &-enter {
-        animation-name: modalPanelEnter;
-    }
-
-    &-leave {
-        animation-name: modalPanelLeave;
-    }
-
     @include breakpoint( $medium-up ) {
         position: absolute;
         left: 15%;
@@ -33,5 +21,17 @@
         @include x-rem( width, 500px );
 
         left: calc( 50% - 250px );
+    }
+
+    p {
+        margin: 0;
+    }
+
+    &-enter {
+        animation-name: modalPanelEnter;
+    }
+
+    &-leave {
+        animation-name: modalPanelLeave;
     }
 }

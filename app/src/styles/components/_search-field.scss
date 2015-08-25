@@ -11,11 +11,6 @@
     background-color: tint( $brand-grey, 90% );
     transition: 0.3s ease;
 
-    &:focus {
-        outline: none;
-        background-color: $white;
-    }
-
     @include breakpoint( $medium-up ) {
         @include x-rem( height, 32px );
 
@@ -30,6 +25,11 @@
         @include x-rem( width, 500px );
 
         left: calc( 50% - 250px );
+    }
+
+    &:focus {
+        outline: none;
+        background-color: $white;
     }
 }
 
