@@ -19,5 +19,4 @@ module.exports = {
     clean: {
         src: 'app/dist'
     }
-
 };
