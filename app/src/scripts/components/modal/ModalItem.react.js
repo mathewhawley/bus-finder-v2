@@ -20,7 +20,7 @@ class ModalItem extends React.Component {
                     <p>{ this.props.destination }</p>
                 </div>
 
-                <div className={ this.props.className + '__item-wait'}>
+                <div className={ this.props.className + '__item-wait' }>
                     { estimatedWait }
                 </div>
             </div>
